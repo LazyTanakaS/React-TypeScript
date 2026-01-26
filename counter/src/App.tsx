@@ -1,9 +1,16 @@
-import { useState } from "react";
-import "./App.css";
-import Button from "./Button"
+import { useEffect, useState } from 'react';
+import './App.css';
+import Button from './Button';
 
 function App() {
-  const [count, setCount] = useState<number>(0);
+  const [count, setCount] = useState<number>(() => {
+    const saved = localStorage.getItem('counter');
+    return saved ? Number(saved) : 0;
+  });
+
+  useEffect(() => {
+    localStorage.setItem('counter', count.toString());
+  }, [count]);
 
   const handleChange = (amount: number) => {
     setCount((prevCount) => prevCount + amount);
@@ -21,12 +28,23 @@ function App() {
         <h2>{count}</h2>
       </div>
 
-      <Button label="+5" onClick={() => handleChange(5)} className="btn-plus-5"/>
-      <Button label="+1" onClick={() => handleChange(1)} className="btn-plus"/>
-      <Button label="Reset" onClick={handleReset} className="btn-reset"/>
-      <Button label="-1" onClick={() => handleChange(-1)} className="btn-minus"/>
-      <Button label="-5" onClick={() => handleChange(-5)} classNam
-      e="btn-minus-5"/>
+      <Button
+        label="+5"
+        onClick={() => handleChange(5)}
+        className="btn-plus-5"
+      />
+      <Button label="+1" onClick={() => handleChange(1)} className="btn-plus" />
+      <Button label="Reset" onClick={handleReset} className="btn-reset" />
+      <Button
+        label="-1"
+        onClick={() => handleChange(-1)}
+        className="btn-minus"
+      />
+      <Button
+        label="-5"
+        onClick={() => handleChange(-5)}
+        className="btn-minus-5"
+      />
     </>
   );
 }
