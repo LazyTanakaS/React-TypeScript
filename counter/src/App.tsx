@@ -2,21 +2,48 @@ import { useEffect, useState } from 'react';
 import './App.css';
 import Button from './Button';
 
+interface HistoryEntry {
+  action: string;
+  timestamp: string;
+}
+
 function App() {
   const [count, setCount] = useState<number>(() => {
     const saved = localStorage.getItem('counter');
     return saved ? Number(saved) : 0;
   });
 
+  const [history, setHistory] = useState<HistoryEntry[]>([]);
+
   useEffect(() => {
     localStorage.setItem('counter', count.toString());
   }, [count]);
 
   const handleChange = (amount: number) => {
-    setCount((prevCount) => prevCount + amount);
+    setCount((prevCount) => {
+      const newCount = prevCount + amount;
+
+      return Math.max(0, Math.min(100, newCount));
+    });
+
+    const newEntry: HistoryEntry = {
+      action: amount > 0 ? `+${amount}` : `${amount}`,
+      timestamp: new Date().toLocaleTimeString(),
+    };
+
+    setHistory((prevHistory) => [newEntry, ...prevHistory].slice(0, 5));
   };
 
-  const handleReset = () => setCount(0);
+  const handleReset = () => {
+    setCount(0);
+
+    const newEntry: HistoryEntry = {
+      action: 'Reset',
+      timestamp: new Date().toLocaleTimeString(),
+    };
+
+    setHistory((prevHistory) => [newEntry, ...prevHistory].slice(0, 5));
+  };
 
   return (
     <>
@@ -45,6 +72,18 @@ function App() {
         onClick={() => handleChange(-5)}
         className="btn-minus-5"
       />
+
+      <div className="history">
+        <h3>History:</h3>
+        <ul>
+          {history.map((entry, index) => (
+            <li key={index}>
+              <span>{entry.action}</span>
+              <span>{entry.timestamp}</span>
+            </li>
+          ))}
+        </ul>
+      </div>
     </>
   );
 }

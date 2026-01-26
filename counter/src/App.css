@@ -75,3 +75,105 @@ button:active {
 .btn-minus-5 {
   background: linear-gradient(135deg, #fa709a 0%, #fee140 100%);
 }
+
+.history {
+  margin-top: 40px;
+  padding: 24px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  border-radius: 16px;
+  max-width: 500px;
+  margin-left: auto;
+  margin-right: auto;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.history h3 {
+  margin: 0 0 20px 0;
+  font-size: 14px;
+  color: white;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-weight: 600;
+}
+
+.history ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  max-height: 350px;
+  overflow-y: auto;
+}
+
+.history ul::-webkit-scrollbar {
+  width: 8px;
+}
+
+.history ul::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 10px;
+}
+
+.history ul::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.5);
+}
+
+.history li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 14px 18px;
+  background: rgba(255, 255, 255, 0.95);
+  margin-bottom: 10px;
+  border-radius: 10px;
+  border-left: 4px solid #667eea;
+  transition: all 0.3s ease;
+  animation: slideIn 0.3s ease;
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.history li:hover {
+  transform: translateX(5px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  border-left-color: #764ba2;
+}
+
+.history li:first-child {
+  border-left-color: #4caf50;
+  background: rgba(255, 255, 255, 1);
+}
+
+.history li span:first-child {
+  font-weight: 700;
+  font-size: 12px;
+  color: #333;
+  min-width: 60px;
+}
+
+.history li span:last-child {
+  color: #666;
+  font-size: 12px;
+  font-family: 'Courier New', monospace;
+  background: #f0f0f0;
+  padding: 4px 10px;
+  border-radius: 6px;
+}
+
+.history ul:empty::before {
+  content: 'Empty History';
+  display: block;
+  text-align: center;
+  color: rgba(255, 255, 255, 0.7);
+  padding: 20px;
+  font-style: italic;
+}
