@@ -1,0 +1,11 @@
+{
+  "recommendations": [
+    "dbaeumer.vscode-eslint",
+    "esbenp.prettier-vscode",
+    "dsznajder.es7-react-js-snippets",
+    "yoavbls.pretty-ts-errors",
+    "christian-kohler.npm-intellisense",
+    "pkief.material-icon-theme",
+    "oderwat.indent-rainbow"
+  ]
+}
