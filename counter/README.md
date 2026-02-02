@@ -1,4 +1,4 @@
-# ⚡ Counter App
+# Counter App
 
 A modern counter application with beautiful design, animations, and data persistence.
 
@@ -6,19 +6,19 @@ A modern counter application with beautiful design, animations, and data persist
 ![TypeScript](https://img.shields.io/badge/TypeScript-5-blue?logo=typescript)
 ![Vite](https://img.shields.io/badge/Vite-7-purple?logo=vite)
 
-## ✨ Features
+## Features
 
-- ➕ Increment counter by +1 and +5
-- ➖ Decrement counter by -1 and -5
-- 🔄 Reset counter to zero
-- 💾 **Auto-save to localStorage** (data persists on reload)
-- 📜 **Action history** (last 5 operations)
-- 🔒 Value limit from 0 to 100
-- 🎨 Modern gradient design
-- ✨ Smooth interaction animations
-- 📱 Responsive interface
+- Increment counter by +1 and +5
+- Decrement counter by -1 and -5
+- Reset counter to zero
+- **Auto-save to localStorage** (data persists on reload)
+- **Action history** (last 5 operations)
+- Value limit from 0 to 100
+- Modern gradient design
+- Smooth interaction animations
+- Responsive interface
 
-## 🚀 Technologies
+## Technologies
 
 - **React 18** - UI library
 - **TypeScript 5** - type safety
@@ -26,7 +26,7 @@ A modern counter application with beautiful design, animations, and data persist
 - **CSS3** - gradients and animations
 - **LocalStorage API** - data persistence
 
-## 📦 Installation and Running
+## Installation and Running
 
 ```bash
 # Install dependencies
@@ -42,7 +42,7 @@ npm run build
 npm run preview
 ```
 
-## 📂 Project Structure
+## Project Structure
 
 ```text
 counter/
@@ -58,42 +58,42 @@ counter/
 └── tsconfig.json        # TypeScript configuration
 ```
 
-## 🎓 What I Learned
+## What I Learned
 
 ### TypeScript
 
-- ✅ Typing `useState<number>()`
-- ✅ Interfaces for props: `interface ButtonProps`
-- ✅ Optional parameters: `onClick?: () => void`
-- ✅ Function typing: `(amount: number) => void`
-- ✅ Object typing: `HistoryEntry`
-- ✅ localStorage typing
+- Typing `useState<number>()`
+- Interfaces for props: `interface ButtonProps`
+- Optional parameters: `onClick?: () => void`
+- Function typing: `(amount: number) => void`
+- Object typing: `HistoryEntry`
+- localStorage typing
 
 ### React Hooks
 
-- ✅ `useState` - state management
-- ✅ `useEffect` - side effects and synchronization
-- ✅ Lazy initialization in useState
-- ✅ Functional state updates: `setCount(prev => prev + 1)`
-- ✅ Dependencies array in useEffect
+- `useState` - state management
+- `useEffect` - side effects and synchronization
+- Lazy initialization in useState
+- Functional state updates: `setCount(prev => prev + 1)`
+- Dependencies array in useEffect
 
 ### Data Management
 
-- ✅ **localStorage** - saving and loading data
-- ✅ JSON serialization/deserialization
-- ✅ Action history management
-- ✅ Value range constraints (0-100)
+- **localStorage** - saving and loading data
+- JSON serialization/deserialization
+- Action history management
+- Value range constraints (0-100)
 
 ### CSS
 
-- ✅ CSS gradients `linear-gradient()`
-- ✅ CSS animations `@keyframes`
-- ✅ Transitions for smoothness
-- ✅ Box-shadow for depth
-- ✅ Hover effects
-- ✅ Custom scrollbar
+- CSS gradients `linear-gradient()`
+- CSS animations `@keyframes`
+- Transitions for smoothness
+- Box-shadow for depth
+- Hover effects
+- Custom scrollbar
 
-## 🎯 Main Components
+## Main Components
 
 ### App.tsx
 
@@ -116,7 +116,7 @@ interface ButtonProps {
 }
 ```
 
-## 🔥 Implementation Features
+## Implementation Features
 
 1. **Auto-save**: Counter automatically saves to localStorage on every change
 2. **History**: Tracks last 5 actions with timestamps
@@ -124,20 +124,20 @@ interface ButtonProps {
 4. **Performance**: Uses functional state updates
 5. **UX**: Smooth animations for history entries
 
-## 📝 Commits
+## Commits
 
 ```bash
 git commit -m "feat: add counter with localStorage persistence and history"
 ```
 
-## 🎨 Design
+## Design
 
 - Purple gradients for main elements
 - Colorful buttons for better visualization
 - slideIn animation for history
 - Responsive hover effects
 
-## 📸 Screenshots
+## Screenshots
 
 The app includes:
 
@@ -148,4 +148,4 @@ The app includes:
 
 ---
 
-**Made with ❤️ and TypeScript**
+Made with ❤️ using React + TypeScript
