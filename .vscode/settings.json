@@ -1,0 +1,14 @@
+{
+  "workbench.colorCustomizations": {
+    "editor.background": "#2b2b29",
+    "sideBar.background": "#262624",
+    "activityBar.background": "#262624",
+    "panel.background": "#262624",
+    "editorGroupHeader.tabsBackground": "#262624",
+    "tab.inactiveBackground": "#262624"
+  },
+  "workbench.iconTheme": "material-icon-theme",
+  "material-icon-theme.folders.theme": "specific",
+  "material-icon-theme.folders.color": "#90a4ae",
+  "material-icon-theme.hidesExplorerArrows": false
+}
