@@ -8,6 +8,8 @@ import {
   loadActiveMonthId,
   saveActiveMonthId,
   createInitialMonth,
+  isSetupCompleted,
+  markSetupCompleted,
 } from "./utils/localStorage";
 import Header from "./components/Header";
 import SideBar from "./components/SideBar";
@@ -16,6 +18,7 @@ import TransactionList from "./components/TransactionList";
 import EditTransactionModal from "./components/EditTransactionModal";
 import ConfirmModal from "./components/ConfirmModal";
 import Subscriptions from "./components/Subscriptions";
+import InitialSetupModal from "./components/InitialSetupModal";
 
 function App() {
   const [months, setMonths] = useState<Month[]>(() => {
@@ -36,6 +39,27 @@ function App() {
   });
 
   const [showCloseMonthConfirm, setShowCloseMonthConfirm] = useState(false);
+  const [showInitialSetup, setShowInitialSetup] = useState<boolean>(() => {
+    return !isSetupCompleted();
+  });
+
+  const handleInitialSetup = (startBalance: number) => {
+    const firstMonth: Month = {
+      id: crypto.randomUUID(),
+      name: new Date().toLocaleString("en-US", {
+        month: "long",
+        year: "numeric",
+      }),
+      startBalance: startBalance,
+      transactions: [],
+      isClosed: false,
+    };
+
+    setMonths([firstMonth]);
+    setActiveMonthId(firstMonth.id);
+    markSetupCompleted();
+    setShowInitialSetup(false);
+  };
 
   const [editingTransaction, setEditingTransaction] =
     useState<Transaction | null>(null);
@@ -53,7 +77,7 @@ function App() {
   const activeMonth = months.find((m) => m.id === activeMonthId);
 
   const stats = activeMonth
-    ? calculateMonthStats(activeMonth.transactions)
+    ? calculateMonthStats(activeMonth.transactions, activeMonth.startBalance)
     : { income: 0, expenses: 0, balance: 0 };
 
   const handleAddTransaction = (transaction: Omit<Transaction, "id">) => {
@@ -154,6 +178,8 @@ function App() {
           : month,
       ),
     );
+    setShowCloseMonthConfirm(false);
+    handleAddMonth();
   };
 
   const handleMonthSelect = (monthId: string) => {
@@ -176,7 +202,10 @@ function App() {
           onClosedMonth={handleCloseMonth}
         />
         <div className="main-content">
-          <TransactionForm onAddTransaction={handleAddTransaction} />
+          <TransactionForm
+            onAddTransaction={handleAddTransaction}
+            isDisabled={activeMonth?.isClosed}
+          />
 
           {activeMonth && (
             <Subscriptions
@@ -214,6 +243,11 @@ function App() {
         confirmText="Close Month"
         cancelText="Cancel"
         isDangerous={true}
+      />
+
+      <InitialSetupModal
+        isOpen={showInitialSetup}
+        onCompleted={handleInitialSetup}
       />
     </div>
   );

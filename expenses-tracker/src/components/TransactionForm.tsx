@@ -8,9 +8,13 @@ import type {
 
 interface TransactionFormProps {
   onAddTransaction: (transaction: Omit<Transaction, "id">) => void;
+  isDisabled?: boolean;
 }
 
-function TransactionForm({ onAddTransaction }: TransactionFormProps) {
+function TransactionForm({
+  onAddTransaction,
+  isDisabled = false,
+}: TransactionFormProps) {
   const [incomeForm, setIncomeForm] = useState({
     amount: "",
     category: "Salary" as IncomeCategory,
@@ -85,6 +89,7 @@ function TransactionForm({ onAddTransaction }: TransactionFormProps) {
               setIncomeForm({ ...incomeForm, amount: e.target.value })
             }
             required
+            disabled={isDisabled}
           />
         </div>
         <div className="form-group">
@@ -114,6 +119,7 @@ function TransactionForm({ onAddTransaction }: TransactionFormProps) {
             onChange={(e) =>
               setIncomeForm({ ...incomeForm, description: e.target.value })
             }
+            disabled={isDisabled}
           />
         </div>
         <div className="form-group">
@@ -125,6 +131,7 @@ function TransactionForm({ onAddTransaction }: TransactionFormProps) {
             onChange={(e) =>
               setIncomeForm({ ...incomeForm, date: e.target.value })
             }
+            disabled={isDisabled}
           />
         </div>
         <button type="submit">Add Income</button>
@@ -147,6 +154,7 @@ function TransactionForm({ onAddTransaction }: TransactionFormProps) {
               setExpensesForm({ ...expensesForm, amount: e.target.value })
             }
             required
+            disabled={isDisabled}
           />
         </div>
         <div className="form-group">
@@ -180,6 +188,7 @@ function TransactionForm({ onAddTransaction }: TransactionFormProps) {
             onChange={(e) =>
               setExpensesForm({ ...expensesForm, description: e.target.value })
             }
+            disabled={isDisabled}
           />
         </div>
         <div className="form-group">
@@ -191,9 +200,12 @@ function TransactionForm({ onAddTransaction }: TransactionFormProps) {
             onChange={(e) =>
               setExpensesForm({ ...expensesForm, date: e.target.value })
             }
+            disabled={isDisabled}
           />
         </div>
-        <button type="submit">Add Expense</button>
+        <button type="submit" disabled={isDisabled}>
+          Add Expense
+        </button>
       </form>
     </div>
   );

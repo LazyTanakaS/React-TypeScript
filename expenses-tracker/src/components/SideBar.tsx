@@ -18,6 +18,18 @@ function SideBar({
 }: SideBarProps) {
   const activeMonth = months.find((m) => m.id === activeMonthId);
   const closedMonth = months.filter((m) => m.isClosed);
+  {
+    closedMonth.map((month) => {
+      <button
+        key={month.id}
+        className="month-item closed"
+        onClick={() => onMonthSelect(month.id)}
+        disabled={activeMonth?.isClosed}
+      >
+        <FaLock /> {month.name}
+      </button>;
+    });
+  }
 
   return (
     <aside className="sidebar">

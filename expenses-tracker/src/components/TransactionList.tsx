@@ -1,7 +1,7 @@
 import { useState } from "react";
 import type { Transaction } from "../types/types";
 import TransactionItem from "./TransactionItem";
-import { FaChartLine } from "react-icons/fa";
+import { FaChartLine, FaFileInvoiceDollar, FaPlus } from "react-icons/fa";
 
 interface TransactionListProps {
   transactions: Transaction[];
@@ -61,7 +61,24 @@ function TransactionList({
 
       <div className="transactions">
         {filteredTransactions.length === 0 ? (
-          <p className="no-transactions">No transactions found</p>
+          <div className="no-transactions">
+            <div className="empty-state">
+              <div className="empty-state-icon">
+                <FaFileInvoiceDollar />
+              </div>
+              <h3 className="empty-state-title">No Transactions Yet</h3>
+              <p className="empty-state-description">
+                {filterType !== "all" || filterCategory !== "all"
+                  ? "No transactions match your filters. Try adjusting the filters above."
+                  : "Start tracking your finances by adding your first income or expense transaction."}
+              </p>
+              {filterType === "all" && filterCategory === "all" && (
+                <button className="empty-state-action">
+                  <FaPlus /> Add Transaction
+                </button>
+              )}
+            </div>
+          </div>
         ) : (
           filteredTransactions.map((transaction) => (
             <TransactionItem

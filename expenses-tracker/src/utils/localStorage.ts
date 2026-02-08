@@ -2,6 +2,15 @@ import type { Month } from "../types/types";
 
 const MONTHS_KEY = "expense-tracker-months";
 const ACTIVE_MONTH_KEY = "expense-tracker-active-month-id";
+const SETUP_COMPLETED_KEY = "expense-tracker-setup-completed";
+
+export const isSetupCompleted = (): boolean => {
+  return localStorage.getItem(SETUP_COMPLETED_KEY) === "true";
+};
+
+export const markSetupCompleted = (): void => {
+  localStorage.setItem(SETUP_COMPLETED_KEY, "true");
+};
 
 export const loadMonths = (): Month[] | null => {
   const saved = localStorage.getItem(MONTHS_KEY);
