@@ -22,15 +22,15 @@ function Subscriptions({ transactions, onEdit, onDelete }: SubscriptionsProps) {
   }
 
   return (
-    <div className="subscription-container">
-      <div className="subscription-header">
-        <h3>📋 Active Subscriptions</h3>
-        <span className="subscription-total">
-          Total: {totalSubscriptions} Kč/month
+    <div className="subscriptions">
+      <div className="subscriptions-header">
+        <h2>📋 Active Subscriptions</h2>
+        <span className="total-subscriptions">
+          {totalSubscriptions.toLocaleString()} Kč/month
         </span>
       </div>
 
-      <div className="subscription-list">
+      <div className="transactions">
         {subscriptions.map((subscription) => (
           <TransactionItem
             key={subscription.id}

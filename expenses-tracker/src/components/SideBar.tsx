@@ -46,14 +46,15 @@ function SideBar({
       </div>
 
       <div className="sidebar-section">
-        <button className="btn-new" onClick={onAddMonth}>
-          {" "}
-          + New Month
-        </button>
-        <button className="btn-close" onClick={onClosedMonth}>
-          {" "}
-          Close Current
-        </button>
+        <h3>Actions</h3>
+        <div className="sidebar-actions">
+          <button className="btn-add-month" onClick={onAddMonth}>
+            + New Month
+          </button>
+          <button className="btn-close-month" onClick={onClosedMonth}>
+            Close Current
+          </button>
+        </div>
       </div>
     </aside>
   );

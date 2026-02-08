@@ -1,3 +1,5 @@
+import type { Transaction } from "../types/types";
+
 interface TransactionItemProps {
   transaction: Transaction;
   onEdit: (id: string) => void;
@@ -28,18 +30,19 @@ function TransactionItem({
   return (
     <div className="transaction-item">
       <div className="transaction-info">
-        <span className="date">{formatDate(transaction.date)}</span>
-        <span className="icon">{icon}</span>
-        <span className="category">{transaction.category}</span>
-        {transaction.description && (
-          <span className="description"> - {transaction.description}</span>
-        )}
+        <span className="transaction-date">{formatDate(transaction.date)}</span>
+        <span className="transaction-icon">{icon}</span>
+        <div className="transaction-details">
+          <h4>{transaction.category}</h4>
+          {transaction.description && <p>{transaction.description}</p>}
+        </div>
       </div>
 
+      <span className={`transaction-amount ${amountClass}`}>{amount}</span>
+
       <div className="transaction-actions">
-        <span className={`amount ${amountClass}`}>{amount}</span>
-        <button onClick={() => onEdit(transaction.id)}>Edit</button>
-        <button onClick={() => onDelete(transaction.id)}>Delete</button>
+        <button onClick={() => onEdit(transaction.id)}>✏️ Edit</button>
+        <button onClick={() => onDelete(transaction.id)}>🗑️ Delete</button>
       </div>
     </div>
   );

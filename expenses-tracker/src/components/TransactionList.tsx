@@ -29,7 +29,7 @@ function TransactionList({
 
   return (
     <div className="transaction-list">
-      <h3>📊 All Transactions</h3>
+      <h2>📊 All Transactions</h2>
 
       <div className="filters">
         <select
@@ -47,7 +47,7 @@ function TransactionList({
           value={filterCategory}
           onChange={(e) => setFilterCategory(e.target.value)}
         >
-          <option value="all">All Categories</option>{" "}
+          <option value="all">All Categories</option>
           {categories.map((category) => (
             <option key={category} value={category}>
               {category}
@@ -58,7 +58,7 @@ function TransactionList({
 
       <div className="transactions">
         {filteredTransactions.length === 0 ? (
-          <p>No transactions found</p>
+          <p className="no-transactions">No transactions found</p>
         ) : (
           filteredTransactions.map((transaction) => (
             <TransactionItem
