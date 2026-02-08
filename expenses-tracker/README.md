@@ -1,350 +1,345 @@
-# Expenses Tracker — React + TypeScript# Expenses Tracker — React + TypeScript
+# Expenses Tracker App — React + TypeScript
 
-![React](https://img.shields.io/badge/React-18-blue?style=flat-square&logo=react)![React](https://img.shields.io/badge/React-18-blue?style=flat-square&logo=react)
+![React](https://img.shields.io/badge/React-18-blue?style=flat-square&logo=react)
+![TypeScript](https://img.shields.io/badge/TypeScript-5-blue?style=flat-square&logo=typescript)
+![Vite](https://img.shields.io/badge/Vite-7-purple?style=flat-square&logo=vite)
 
-![TypeScript](https://img.shields.io/badge/TypeScript-5-blue?style=flat-square&logo=typescript)![TypeScript](https://img.shields.io/badge/TypeScript-5-blue?style=flat-square&logo=typescript)
+## Overview
 
-![Vite](https://img.shields.io/badge/Vite-7-purple?style=flat-square&logo=vite)![Vite](https://img.shields.io/badge/Vite-7-purple?style=flat-square&logo=vite)
+A comprehensive personal finance tracker with monthly budgeting, transaction management, and subscription tracking.
 
-## Overview## Overview
-
-A comprehensive expense tracker application with beautiful design, animations, and advanced financial management features.A comprehensive expense tracker application with beautiful design, animations, and advanced financial management features.
-
-**Goal:** Practice complex state management, CRUD operations, and multi-component architecture.**Goal:** Practice complex state management, CRUD operations, and multi-component architecture.
+**Goal:** Practice complex state management, modal workflows, and localStorage integration with multiple data entities.
 
 ---
 
-## Features## Features
+## Features
 
-- **Multi-month management** - track different months separately- **Multi-month management** - track different months separately
-
-- **Income & Expense tracking** - separate forms with validation- **Income & Expense tracking** - separate forms with validation
-
-- **Real-time statistics** - income, expenses, and balance display- **Real-time statistics** - income, expenses, and balance display
-
-- **Transaction categories** - organized by type (Salary, Food, Transport, etc.)- **Transaction categories** - organized by type (Salary, Food, Transport, etc.)
-
-- **Subscription tracking** - monitor recurring payments- **Subscription tracking** - monitor recurring payments
-
-- **Edit & Delete** - modify or remove transactions- **Edit & Delete** - modify or remove transactions
-
-- **Filter system** - by type and category- **Filter system** - by type and category
-
-- **Auto-save to localStorage** - data persists on reload- **Auto-save to localStorage** - data persists on reload
-
-- **Month closing** - lock completed months- **Month closing** - lock completed months
-
-- **Modern gradient design** with dark theme- **Modern gradient design** with dark theme
-
-- **Smooth animations** and micro-interactions- **Smooth animations** and micro-interactions
-
-- **Fully responsive** interface- **Fully responsive** interface
+- 💰 **Initial balance setup** wizard
+- 📊 **Monthly budgeting** with separate month management
+- ➕ **Add income and expenses** with categories
+- ✏️ **Edit transactions** with modal interface
+- ❌ **Delete transactions** with confirmation
+- 🔒 **Close months** to prevent editing past periods
+- 📅 **Monthly navigation** via sidebar
+- 💳 **Subscription tracking** for recurring expenses
+- 📈 **Real-time balance calculation** (income - expenses)
+- 💾 **Auto-save to localStorage** (data persists on reload)
+- 🎨 **Modern gradient design**
+- ✨ **Smooth animations** and modal interactions
+- 📱 **Responsive interface**
 
 ---
 
-## Tech Stack## Tech Stack
+## Technologies
 
-- React 18- React 18
+- **React 18** - UI library
+- **TypeScript 5** - type safety
+- **Vite 7** - fast build tool
+- **CSS3** - gradients, shadows, and animations
+- **LocalStorage API** - data persistence
+- **Crypto API** - UUID generation for IDs
 
-- TypeScript 5
+---
 
-- Vite 7- React 18
+## Installation and Running
 
-- React Icons- TypeScript 5
-
-- CSS3 (animations, gradients)- Vite 7
-
-- LocalStorage API- React Icons
-
-- CSS3 (animations, gradients)
-
----- LocalStorage API
-
-## Installation & Running---
-
-````bash## Installation & Running
-
+```bash
 # Install dependencies
-
-npm install```bash
-
-# Install dependencies
-
-# Run development servernpm install
-
-npm run dev
+npm install
 
 # Run development server
-
-# Build for productionnpm run dev
-
-npm run build
+npm run dev
 
 # Build for production
+npm run build
 
-# Preview production buildnpm run build
-
-npm run preview```
-
-````
-
----
+# Preview production build
+npm run preview
+```
 
 ---
 
 ## Project Structure
 
-## Project Structure
-
-``````text
-
-```textexpenses-tracker/
-
-expenses-tracker/├── src/
-
-├── src/│   ├── components/
-
-│   ├── components/│   │   ├── ConfirmModal.tsx           # Confirmation dialog
-
-│   │   ├── ConfirmModal.tsx           # Confirmation dialog│   │   ├── EditTransactionModal.tsx   # Edit transaction form
-
-│   │   ├── EditTransactionModal.tsx   # Edit transaction form│   │   ├── Header.tsx                 # Stats display
-
-│   │   ├── Header.tsx                 # Stats display│   │   ├── InitialSetupModal.tsx      # First launch setup
-
-│   │   ├── InitialSetupModal.tsx      # First launch setup│   │   ├── Modal.tsx                  # Base modal wrapper
-
-│   │   ├── Modal.tsx                  # Base modal wrapper│   │   ├── SideBar.tsx                # Month navigation
-
-│   │   ├── SideBar.tsx                # Month navigation│   │   ├── Subscriptions.tsx          # Subscription tracker
-
-│   │   ├── Subscriptions.tsx          # Subscription tracker
-
-│   │   ├── TransactionForm.tsx        # Add transaction forms│   │   ├── TransactionForm.tsx        # Add transaction forms# Install dependencies
-
-│   │   ├── TransactionItem.tsx        # Transaction display
-
-│   │   └── TransactionList.tsx        # List with filters│   │   ├── TransactionItem.tsx        # Transaction display
-
+```text
+expenses-tracker/
+├── src/
+│   ├── App.tsx                      # Main component with logic
+│   ├── App.css                      # Application styles
+│   ├── main.tsx                     # Entry point
+│   ├── index.css                    # Global styles
+│   ├── components/
+│   │   ├── Header.tsx               # Header with stats display
+│   │   ├── SideBar.tsx              # Month navigation sidebar
+│   │   ├── TransactionForm.tsx      # Form to add transactions
+│   │   ├── TransactionList.tsx      # List of all transactions
+│   │   ├── TransactionItem.tsx      # Single transaction item
+│   │   ├── EditTransactionModal.tsx # Modal for editing
+│   │   ├── ConfirmModal.tsx         # Confirmation dialog
+│   │   ├── InitialSetupModal.tsx    # First-time setup wizard
+│   │   ├── Subscriptions.tsx        # Subscription tracker
+│   │   └── Modal.tsx                # Base modal component
 │   ├── types/
-
-│   │   └── types.ts                   # TypeScript types│   │   └── TransactionList.tsx        # List with filtersnpm install- **Vite 7** - fast build tool
-
+│   │   └── types.ts                 # TypeScript type definitions
 │   ├── utils/
-
-│   │   ├── calculations.ts            # Financial calculations│   ├── types/
-
-│   │   └── localStorage.ts            # Storage utilities
-
-│   ├── App.tsx                        # Main component│   │   └── types.ts                   # TypeScript types
-
-│   ├── App.css                        # Application styles
-
-│   ├── main.tsx                       # Entry point│   ├── utils/
-
-│   └── index.css                      # Global styles
-
-├── public/│   │   ├── calculations.ts            # Financial calculations# Run development server- **React Icons** - professional icon library- **Filter system** - by type and category
-
-├── package.json
-
-├── vite.config.ts│   │   └── localStorage.ts            # Storage utilities
-
-└── tsconfig.json
-
-```│   ├── App.tsx                        # Main componentnpm run dev
-
-
-
----│   ├── App.css                        # Application styles
-
-
-
-## What I Learned│   ├── main.tsx                       # Entry point- **CSS3** - advanced animations and effects
-
-
-
-### TypeScript│   └── index.css                      # Global styles
-
-
-
-- Complex type definitions: `Transaction`, `Month`, `MonthData`├── public/# Build for production
-
-- Union types: `type: "income" | "expense"`
-
-- Enum-like types: `IncomeCategory`, `ExpensesCategory`├── package.json
-
-- Interface composition and reuse
-
-- Type guards and narrowing├── vite.config.tsnpm run build- **LocalStorage API** - data persistence- **Auto-save to localStorage** - data persists on reload```js
-
-- Generic types with `Omit<T, K>`
-
-- Optional properties with `?`└── tsconfig.json
-
-
-
-### React Hooks`````
-
-
-
-- `useState` - complex state management---## Installation and Running- **Month closing** - lock completed monthsexport default defineConfig([
-
-- `useEffect` - data synchronization with localStorage
-
-- `useMemo` - performance optimization for calculations## What I Learned---
-
-- Controlled components for forms
-
-- Multiple state updates in one function**TypeScript:**````bash- Modern gradient design with dark theme globalIgnores(['dist']),
-
-- Functional state updates for immutability
-
-- Complex type definitions: `Transaction`, `Month`, `MonthData`
-
-### Data Management
-
-- Union types: `type: "income" | "expense"`## Project Structure
-
-- localStorage - complete app state persistence
-
-- Nested data structures (months → transactions)- Enum-like types: `IncomeCategory`, `ExpensesCategory`
-
-- CRUD operations (Create, Read, Update, Delete)
-
-- Data filtering and sorting- Interface composition and reuse# Install dependencies
-
-- Financial calculations (totals, balances)
-
-- Month status management (open/closed)- Type guards and narrowing
-
-
-
-### CSS Advanced Techniques- Generic types with `Omit<T, K>````text
-
-
-
-- CSS Variables (`:root`) for theming- Optional properties with `?`
-
-- Keyframe animations (`fadeIn`, `slideIn`, `spin`)
-
-- Backdrop filter effectsexpenses-tracker/npm install- Smooth animations and micro-interactions {
-
-- Custom scrollbars
-
-- Sticky positioning**React Hooks:**
-
-- Smooth scroll behavior
-
-- Micro-interactions and hover effects- `useState` — complex state management├── src/
-
-- Gradient backgrounds
-
-- Box shadows for depth- `useEffect` — data synchronization with localStorage
-
-- Loading states with spinners
-
-- `useMemo` — performance optimization for calculations│ ├── components/
+│   │   ├── calculations.ts          # Balance calculations
+│   │   └── localStorage.ts          # Data persistence logic
+│   └── styles/                      # Additional styles
+├── public/                          # Static files
+├── package.json                     # Dependencies
+├── vite.config.ts                   # Vite configuration
+└── tsconfig.json                    # TypeScript configuration
+```
+
+---
+
+## What I Learned
+
+### TypeScript
+
+- Complex type definitions: `Transaction`, `Month`
+- Type unions: `type: "income" | "expense"`
+- String literal types: `ExpensesCategory`, `IncomeCategory`
+- Optional properties: `closedAt?: string`
+- Type exports and imports: `import type { Month, Transaction }`
+- Omit utility type: `Omit<Transaction, "id">`
+- Function typing with complex parameters
+- Props interfaces for multiple components
+
+### React Hooks
+
+- `useState` - managing months, transactions, modals, and active month
+- `useEffect` - syncing with localStorage on data changes
+- Lazy initialization with functions in useState
+- Functional state updates with `map()` and `filter()`
+- Multiple useEffect hooks for different concerns
+- Dependencies array optimization
 
 ### Component Architecture
 
-- Controlled components for forms
+- **Component composition** - breaking down complex UI
+- **Modal patterns** - reusable modal wrapper component
+- **Prop drilling** vs. **callback props**
+- **Controlled components** - forms and inputs
+- **Conditional rendering** - showing/hiding modals
+- **Component isolation** - separating concerns
 
-- Modal system with reusable wrapper
+### Data Management
 
-- Form validation and error handling- Multiple state updates in one function│ │ ├── ConfirmModal.tsx # Confirmation dialog
+- **localStorage** - saving and loading complex data structures
+- **JSON serialization/deserialization** for objects
+- **UUID generation** with crypto.randomUUID()
+- **Immutable updates** - spreading objects and arrays
+- **Derived state** - calculating stats from transactions
+- **Multi-entity relationships** - months containing transactions
+- **Data validation** - checking setup completion
 
-- Conditional rendering patterns
+### State Management Patterns
 
-- Props drilling and callbacks- Functional state updates for immutability
+- **Lifting state up** - managing state at App level
+- **State updates** - immutably updating nested data
+- **Array transformations** - map, filter for state updates
+- **State initialization** - loading from localStorage on mount
+- **Boolean flags** - for modal visibility and closed months
 
-- Component composition
+### Business Logic
 
-- Empty states design│ │ ├── EditTransactionModal.tsx # Edit transaction form# Run development server- Fully responsive interface files: ['**/*.{ts,tsx}'],
+- **Month lifecycle** - creation, usage, and closing
+- **Transaction CRUD** - Create, Read, Update, Delete
+- **Balance calculation** - start balance + income - expenses
+- **Date handling** - storing and displaying dates
+- **Categories** - predefined and custom categories
+- **Initial setup flow** - wizard pattern
 
+### CSS
 
+- CSS gradients `linear-gradient()`
+- Flexbox layouts for responsive design
+- CSS Grid for component layout
+- Modal overlay with backdrop-filter
+- Transitions for smooth interactions
+- Hover effects for buttons and items
+- Box-shadow for depth and elevation
+- Custom scrollbar styling
+- Responsive design with media queries
 
----**Data Management:**
+---
 
+## Main Components
 
+### App.tsx
 
-## Key Components- localStorage — complete app state persistence│ │ ├── Header.tsx # Stats display
+Main application component with:
 
-
-
-### App.tsx- Nested data structures (months → transactions)
-
-
-
-Main component with:- CRUD operations (Create, Read, Update, Delete)│ │ ├── InitialSetupModal.tsx # First launch setupnpm run dev
-
-- Month management
-
-- Transaction CRUD operations- Data filtering and sorting
-
-- Modal state control
-
-- Data persistence- Financial calculations (totals, balances)│ │ ├── Modal.tsx # Base modal wrapper
-
-- Initial setup flow
-
-- Month status management (open/closed)
+- Month state management (array of months)
+- Active month tracking
+- Transaction CRUD operations
+- Modal state management
+- localStorage synchronization
+- Initial setup flow control
 
 ### Header.tsx
 
-│ │ ├── SideBar.tsx # Month navigation extends: [
+Displays financial overview:
 
-Statistics display:
-
-- Total income (green)**CSS Advanced:**
-
+- Current month name
+- Total income (green)
 - Total expenses (red)
+- Current balance
+- Month management buttons
 
-- Balance (blue)- CSS Variables (`:root`) for theming│ │ ├── Subscriptions.tsx # Subscription tracker
+### SideBar.tsx
 
+Navigation component:
 
+- List of all months
+- Active month highlighting
+- Create new month button
+- Month switching functionality
+- Visual indicators for closed months
 
-### SideBar.tsx- Keyframe animations (`fadeIn`, `slideIn`, `spin`)
+### TransactionForm.tsx
 
+Form for adding transactions:
 
-
-Month navigation:- Backdrop filter effects│ │ ├── TransactionForm.tsx # Add transaction forms# Build for production
-
-- Active month indicator
-
-- Add new month button- Custom scrollbars
-
-- Close month functionality
-
-- Month list with icons- Sticky positioning│ │ ├── TransactionItem.tsx # Transaction display
-
-
-
-### TransactionForm.tsx- Smooth scroll behavior
-
-
-
-Dual form system:- Micro-interactions and hover effects│ │ └── TransactionList.tsx # List with filtersnpm run build## Technologies // Other configs...
-
-- Income form (green theme)
-
-- Expense form (red theme)- Gradient backgrounds
-
-- Category selection
-
-- Date picker- Box shadows for depth│ ├── types/
-
-- Amount validation
-
-- Loading states with spinners
+```typescript
+- Type selection (income/expense)
+- Amount input with validation
+- Category dropdown
+- Custom category input
+- Description field
+- Date picker
+- Form validation
+```
 
 ### TransactionList.tsx
 
-│ │ └── types.ts # TypeScript types
+Lists all transactions:
 
-Transaction display:
+- Grouped display of transactions
+- Income items (green indicators)
+- Expense items (red indicators)
+- Empty state message
+- Action buttons (edit/delete)
 
-- Type filter (All/Income/Expense)**Component Architecture:**
+### Modal Components
 
-- Category filter
+**InitialSetupModal**: First-time setup wizard for initial balance
 
+**EditTransactionModal**: Edit existing transaction with pre-filled data
+
+**ConfirmModal**: Confirmation dialog for destructive actions
+
+**Modal**: Base reusable modal wrapper with backdrop
+
+---
+
+## Implementation Features
+
+1. **Multi-Month System**: Create and manage separate months with independent budgets
+2. **Month Closing**: Lock past months to prevent accidental edits
+3. **Smart Navigation**: Sidebar for quick month switching
+4. **Data Integrity**: Immutable state updates ensure data consistency
+5. **Auto-save**: All changes immediately persist to localStorage
+6. **Modal Workflows**: Intuitive modal-based editing and confirmation flows
+7. **Category System**: Predefined categories with custom category support
+8. **Real-time Calculations**: Balance updates instantly as transactions are added
+9. **Transaction Management**: Full CRUD operations with edit and delete capabilities
+10. **Initial Setup**: Guided wizard for first-time users
+
+---
+
+## Design
+
+- Modern gradient backgrounds (purple, blue, pink hues)
+- Color-coded transactions (green for income, red for expenses)
+- Clean card-based layout with shadows
+- Smooth modal animations with backdrop blur
+- Responsive button styles with hover effects
+- Clear visual hierarchy
+- Intuitive iconography
+- Accessible color contrasts
+
+---
+
+## Screenshots
+
+The app includes:
+
+- **Header**: Shows current balance, income, and expenses with color coding
+- **Sidebar**: Monthly navigation with visual status indicators
+- **Transaction Form**: Clean input form with type toggle
+- **Transaction List**: Organized list of all income and expenses
+- **Modals**: Smooth overlay modals for editing and confirmations
+- **Initial Setup**: Welcome wizard for first-time setup
+
+---
+
+## Key Features Explained
+
+### Month Management
+
+Each month has its own balance and transactions. You can:
+
+- Create new months
+- Switch between months
+- Close months to prevent further edits
+- Each month tracks its start balance
+
+### Transaction Categories
+
+**Income:** Salary, Side Job, Debt repayment, or custom
+
+**Expenses:** Food, Shopping, Taxi, Fuel, Entertainment, Bills, Subscriptions, or custom
+
+### Balance Calculation
+
+```text
+Current Balance = Start Balance + Total Income - Total Expenses
+```
+
+### Data Persistence
+
+All data is automatically saved to localStorage:
+
+- All months and their transactions
+- Active month selection
+- Setup completion status
+
+---
+
+## Future Improvements
+
+- [ ] Add transaction search and filtering
+- [ ] Export data to CSV/PDF
+- [ ] Budget goals and alerts
+- [ ] Charts and visual analytics
+- [ ] Multi-currency support
+- [ ] Recurring transaction templates
+- [ ] Tags for better categorization
+- [ ] Dark mode toggle
+
+---
+
+## Lessons & Takeaways
+
+This project taught me how to:
+
+- Manage complex nested state structures
+- Build reusable modal components
+- Handle multi-step user flows (setup wizard)
+- Organize large React applications
+- Work with multiple TypeScript types
+- Implement CRUD operations properly
+- Structure utility functions for calculations
+- Handle localStorage for complex data
+
+---
+
+## License
+
+MIT
+
+---
+
+Made with ❤️ using React + TypeScript

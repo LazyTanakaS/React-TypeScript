@@ -1,280 +1,329 @@
-# Weather App — React + TypeScript# Weather App — React + TypeScript# 🌤️ Weather App# Weather App# React + TypeScript + Vite
+# Weather App — React + TypeScript
 
-![React](https://img.shields.io/badge/React-18-blue?style=flat-square&logo=react)![React](https://img.shields.io/badge/React-18-blue?style=flat-square&logo=react)A modern weather application with beautiful glassmorphism design, dynamic themes, and search history.A modern weather application with beautiful glassmorphism design, dynamic themes, and search history.This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
-
+![React](https://img.shields.io/badge/React-19-blue?style=flat-square&logo=react)
 ![TypeScript](https://img.shields.io/badge/TypeScript-5-blue?style=flat-square&logo=typescript)
-
-![Vite](https://img.shields.io/badge/Vite-7-purple?style=flat-square&logo=vite)![TypeScript](https://img.shields.io/badge/TypeScript-5-blue?style=flat-square&logo=typescript)
-
-![OpenWeather](https://img.shields.io/badge/OpenWeather-API-orange?style=flat-square&logo=weatherapi)
-
-![Vite](https://img.shields.io/badge/Vite-7-purple?style=flat-square&logo=vite)![React](https://img.shields.io/badge/React-18-blue?logo=react)![React](https://img.shields.io/badge/React-18-blue?logo=react)Currently, two official plugins are available:
+![Vite](https://img.shields.io/badge/Vite-7-purple?style=flat-square&logo=vite)
 
 ## Overview
 
-![OpenWeather](https://img.shields.io/badge/OpenWeather-API-orange?style=flat-square&logo=weatherapi)
+A beautiful weather application with real-time weather data, dynamic themes, and search history.
 
-A modern weather application with beautiful glassmorphism design, dynamic themes, and search history.
-
-![TypeScript](https://img.shields.io/badge/TypeScript-5-blue?logo=typescript)
-
-**Goal:** Practice API integration, dynamic theming, and localStorage persistence.
-
-## Overview
+**Goal:** Practice API integration, async operations, environment variables, and dynamic theming.
 
 ---
 
-![Vite](https://img.shields.io/badge/Vite-7-purple?logo=vite)![TypeScript](https://img.shields.io/badge/TypeScript-5-blue?logo=typescript)
-
 ## Features
 
-A modern weather application with beautiful glassmorphism design, dynamic themes, and search history.
+- 🌤️ **Real-time weather data** from OpenWeatherMap API
+- 🔍 **City search** with Enter key support
+- 🎨 **Dynamic themes** that change based on weather conditions
+- 📊 **Detailed weather info** (temperature, feels like, humidity, wind speed)
+- 📜 **Search history** (last 7 searches)
+- ⏰ **Relative timestamps** (e.g., "5m ago", "2h ago")
+- 🖼️ **Weather icons** from OpenWeatherMap
+- 💾 **Auto-save history to localStorage**
+- ✨ **Smooth animations** and transitions
+- 📱 **Responsive design**
+- ⚡ **Fast loading states** with user feedback
 
-- 🔍 **Real-time weather search** by city name
+---
 
-- 🌡️ **Current temperature**, feels like, humidity, and wind speed![OpenWeather](https://img.shields.io/badge/OpenWeather-API-orange?logo=weatherapi)
+## Technologies
 
-- 🎨 **Dynamic theme** based on weather conditions
-
-- 📜 **Search history** (last 7 searches)**Goal:** Practice API integration, dynamic theming, and localStorage persistence.
-
-- ⏰ **Timestamp** for each search
-
-- 🌤️ **Weather icons** from OpenWeatherMap![Vite](https://img.shields.io/badge/Vite-7-purple?logo=vite)- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-
-- ✨ **Glassmorphism design** with blur effects
-
-- 🎭 **Smooth animations** and transitions---
-
-- 💾 **Auto-save history** to localStorage
-
-- 📱 **Responsive interface**## ✨ Features
-
----## Features
-
-## Weather Themes![OpenWeather](https://img.shields.io/badge/OpenWeather-API-orange?logo=weatherapi)- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
-
-The background dynamically changes based on weather:- Real-time weather search by city name
-
-- ☀️ **Sunny** - Yellow-orange gradient- Current temperature, feels like, humidity, wind speed- 🔍 Real-time weather search by city name
-
-- 🌧️ **Rainy** - Blue-grey gradient
-
-- ❄️ **Snowy** - White-blue gradient- Dynamic theme based on weather conditions
-
-- ☁️ **Cloudy** - Grey gradient
-
-- 🌫️ **Mist** - Light grey gradient- Search history (last 7 searches)- 🌡️ Current temperature, feels like, humidity, and wind speed## Features## React Compiler
-
-- ⛈️ **Thunderstorm** - Dark purple gradient
-
-- 💜 **Default** - Purple gradient- Timestamp for each search
-
----- Weather icons from OpenWeatherMap- 🎨 **Dynamic theme** based on weather conditions
-
-## Technologies- Glassmorphism design with blur effects
-
-- **React 18** - UI library- Smooth animations and transitions- 📜 **Search history** (last 7 searches)- Real-time weather search by city nameThe React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
-
+- **React 19** - UI library
 - **TypeScript 5** - type safety
-
-- **Vite 7** - fast build tool- Auto-save history to localStorage
-
+- **Vite 7** - fast build tool
 - **OpenWeatherMap API** - weather data
+- **React Icons** - weather detail icons
+- **CSS3** - dynamic themes and animations
+- **LocalStorage API** - search history persistence
+- **Fetch API** - HTTP requests
 
-- **CSS3** - glassmorphism and animations- Responsive interface- ⏰ **Timestamp** for each search
+---
 
-- **LocalStorage API** - history persistence
+## Installation and Running
 
-- **Fetch API** - HTTP requests---- 🌤️ Weather icons from OpenWeatherMap- Current temperature, feels like, humidity, and wind speed
-
----## Weather Themes- ✨ Glassmorphism design with blur effects
-
-## SetupBackground dynamically changes based on weather:- 🎭 Smooth animations and transitions- **Dynamic theme** based on weather conditions## Expanding the ESLint configuration
-
-### 1. Get API Key- ☀️ **Sunny** — Yellow-orange gradient- 💾 Auto-save history to localStorage
-
-1. Register at [OpenWeatherMap](https://openweathermap.org/api)- 🌧️ **Rainy** — Blue-grey gradient
-
-2. Get your free API key
-
-3. Create `.env` file in project root:- ❄️ **Snowy** — White-blue gradient- 📱 Responsive interface- **Search history** (last 7 searches)
-
-````env- ☁️ **Cloudy** — Grey gradient
-
-VITE_OPENWEATHER_API_KEY=your_api_key_here
-
-```- 🌫️ **Mist** — Light grey gradient## 🌈 Weather Themes- **Timestamp** for each searchIf you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
-
-
-
-### 2. Installation and Running- ⛈️ **Thunderstorm** — Dark purple gradient
-
-
-
-```bashThe background dynamically changes based on weather:- Weather icons from OpenWeatherMap
-
+```bash
 # Install dependencies
+npm install
 
-npm install---
+# Create .env file and add your API key
+# VITE_WEATHER_API_KEY=your_api_key_here
 
-
-
-# Run development server- ☀️ **Sunny** - Yellow-orange gradient- Glassmorphism design with blur effects```js
-
+# Run development server
 npm run dev
 
-## Tech Stack
-
 # Build for production
+npm run build
 
-npm run build- 🌧️ **Rainy** - Blue-grey gradient
-
-
-
-# Preview production build- React 18
-
+# Preview production build
 npm run preview
+```
 
-```- TypeScript 5- ❄️ **Snowy** - White-blue gradient- Smooth animations and transitionsexport default defineConfig([
+### Getting API Key
 
+1. Register at [OpenWeatherMap](https://openweathermap.org/)
+2. Get your free API key
+3. Create `.env` file in the project root
+4. Add: `VITE_WEATHER_API_KEY=your_api_key_here`
 
+---
 
----- Vite 7
+## Project Structure
 
-
-
-## Project Structure- OpenWeatherMap API- ☁️ **Cloudy** - Grey gradient
-
-
-
-```text- CSS3 (glassmorphism, animations)
-
+```text
 weather-app/
+├── src/
+│   ├── App.tsx          # Main component with logic
+│   ├── App.css          # Application styles and themes
+│   ├── main.tsx         # Entry point
+│   └── index.css        # Global styles
+├── public/              # Static files
+├── .env                 # Environment variables (not committed)
+├── package.json         # Dependencies
+├── vite.config.ts       # Vite configuration
+└── tsconfig.json        # TypeScript configuration
+```
 
-├── src/- LocalStorage API- 🌫️ **Mist** - Light grey gradient- Auto-save history to localStorage globalIgnores(['dist']),
+---
 
-│   ├── App.tsx       # Main component
+## What I Learned
 
-│   ├── App.css       # Styles with glassmorphism- Fetch API
+### TypeScript
 
-│   ├── main.tsx      # Entry point
+- **Interface definitions** for API responses: `WeatherResponse`
+- **Complex nested interfaces** with arrays and objects
+- **Type-safe state management** with generics: `useState<Weather | null>`
+- **Optional chaining** for safe property access
+- **Type guards** with `instanceof Error`
+- **Function typing** for async operations
+- **Event typing**: `React.KeyboardEvent`, `React.ChangeEvent`
 
-│   └── index.css     # Global styles- ⛈️ **Thunderstorm** - Dark purple gradient
+### React Hooks
 
-├── public/           # Static files
+- `useState` - managing weather data, loading states, errors, history
+- `useEffect` - syncing with localStorage and updating themes
+- **Lazy initialization** with function in useState
+- **Functional state updates** with callbacks
+- **Multiple useEffect hooks** for different side effects
+- **Dependencies array** management
 
-├── .env              # Environment variables (API key)---
+### API Integration
 
-├── package.json      # Dependencies
-
-├── vite.config.ts    # Vite configuration- Responsive interface {
-
-└── tsconfig.json     # TypeScript configuration
-
-```## Setup
-
-
-
----## 🚀 Technologies
-
-
-
-## What I Learned### Get API Key
-
-
-
-### TypeScriptfiles: ['**/*.{ts,tsx}'],
-
-
-
-- API response typing with interfaces1. Register at [OpenWeatherMap](https://openweathermap.org/api)
-
-- Optional properties: `weather?: WeatherData`
-
-- Type guards for null checks2. Get your free API key- **React 18** - UI library
-
-- Async function typing: `Promise<void>`
-
-- Union types: `string | null`3. Create `.env` file in project root:
-
-- Array typing: `string[]`
-
-- Environment variables typing- **TypeScript 5** - type safety## Weather Themes extends: [
-
-
-
-### React Hooks```env
-
-
-
-- `useState` - managing weather, loading, error, history statesVITE_OPENWEATHER_API_KEY=your_api_key_here- **Vite 7** - fast build tool
-
-- `useEffect` - loading history on mount, saving on change
-
-- Async state updates```
-
-- Error handling in React
-
-- Loading states for better UX- **OpenWeatherMap API** - weather data // Other configs...
-
-
-
-### API Integration### Installation & Running
-
-
-
-- **OpenWeatherMap API** - fetching weather data- **CSS3** - glassmorphism and animations
-
-- Environment variables with Vite: `import.meta.env.VITE_*`
-
-- Async/await for API calls```bash
-
-- Error handling for failed requests
-
-- API response parsing# Install dependencies- **LocalStorage API** - search history persistenceThe background dynamically changes based on weather:
-
-- Query parameters in URLs
-
-npm install
+- **Fetch API** - making HTTP requests
+- **Async/await** - handling asynchronous operations
+- **Error handling** - try/catch blocks
+- **Response validation** - checking response.ok
+- **Query parameters** - building API URLs
+- **Environment variables** - `import.meta.env.VITE_*`
+- **API key security** - using .env files
 
 ### Data Management
 
-- **Fetch API** - HTTP requests
-
 - **localStorage** - persisting search history
+- **JSON serialization/deserialization**
+- **Array manipulation** - filtering and slicing
+- **Timestamp handling** - Date.now() and calculations
+- **Relative time formatting** - converting timestamps to readable format
+- **History deduplication** - preventing duplicate cities
 
-- JSON serialization/deserialization# Create .env file with your API key
+### Advanced Features
 
-- Array methods: `unshift()`, `slice()`, `map()`
+- **Dynamic theming** - changing styles based on data
+- **Conditional class names** - applying themes dynamically
+- **Loading states** - showing feedback during async operations
+- **Error states** - displaying user-friendly error messages
+- **Input validation** - checking for empty inputs
+- **Keyboard events** - Enter key to submit
 
-- Limiting history to 7 itemsecho VITE_OPENWEATHER_API_KEY=your_api_key_here > .env      // Remove tseslint.configs.recommended and replace with this
+### CSS
 
-- Timestamps with `Date.toLocaleString()`
+- CSS custom properties for themes
+- Dynamic class application with JavaScript
+- Background gradients for weather themes
+- Transition effects for smooth theme changes
+- Flexbox and Grid layouts
+- Hover effects on history items
+- Box-shadow for depth
+- Responsive design patterns
 
-- Duplicate prevention in history
+---
 
+## Main Components
 
+### App.tsx
 
-### CSS Advanced# Run development server## 🔧 Setup
+Single-component architecture containing:
 
+- **Weather state management**
+- **City search functionality**
+- **API data fetching**
+- **History management**
+- **Theme switching logic**
+- **Error handling**
+- **Loading states**
 
+### Key Functions
 
-- **Glassmorphism** effect:npm run dev
+**`fetchWeather()`**: Fetches weather data from OpenWeatherMap API
 
-  ```css
+```typescript
+- Validates city input
+- Makes API request with fetch
+- Handles errors and loading states
+- Updates weather state
+- Adds to search history
+```
 
-  background: rgba(255, 255, 255, 0.2);- ☀️ **Sunny** - Yellow-orange gradient tseslint.configs.recommendedTypeChecked,
+**`getWeatherTheme()`**: Determines theme based on weather description
 
-  backdrop-filter: blur(10px);
+```typescript
+- Analyzes weather description
+- Returns theme name: sunny, rainy, snowy, cloudy, stormy
+- Used to apply dynamic background
+```
 
-  border: 1px solid rgba(255, 255, 255, 0.3);# Build for production
+**`formatTime()`**: Converts timestamp to relative time
 
-````
+```typescript
+- Calculates time difference
+- Returns human-readable format: "Just now", "5m ago", "2h ago", "3d ago"
+```
 
-- Dynamic backgrounds with gradientsnpm run build### 1. Get API Key
+**`handleHistoryClick()`**: Refetches weather for a city from history
 
-- CSS transitions for smooth theme changes
+---
 
-- Flexbox layouts```
+## Implementation Features
 
+1. **Weather Themes**: 5 dynamic themes (sunny, rainy, snowy, cloudy, stormy, default)
+2. **Smart History**: Prevents duplicates and limits to 7 most recent searches
+3. **Relative Timestamps**: Shows when each search was performed
+4. **Quick Refetch**: Click on history items to refetch weather
+5. **Keyboard Support**: Press Enter to search
+6. **Loading Feedback**: Disabled button and loading text during fetch
+7. **Error Handling**: User-friendly error messages
+8. **Auto-save**: History persists across sessions
+9. **Input Clear**: Input field clears after successful search
+10. **Weather Details**: Shows temperature, feels like, humidity, wind speed
+
+---
+
+## Design
+
+- **Dynamic backgrounds** that change based on weather
+- **Gradient themes** for different weather conditions:
+  - ☀️ Sunny: warm orange/yellow gradients
+  - 🌧️ Rainy: cool blue/gray tones
+  - ❄️ Snowy: light blue/white palette
+  - ☁️ Cloudy: soft gray gradients
+  - ⛈️ Stormy: dark purple/gray atmosphere
+- **Card-based layout** with shadows
+- **Icon integration** from OpenWeatherMap and React Icons
+- **Smooth transitions** between themes
+- **Grid layout** for history items
+- **Responsive design** for all screen sizes
+
+---
+
+## Weather Themes
+
+The app dynamically changes its appearance based on current weather:
+
+| Condition     | Theme   | Description                  |
+| ------------- | ------- | ---------------------------- |
+| Clear/Sunny   | Sunny   | Warm orange-yellow gradients |
+| Rain/Drizzle  | Rainy   | Cool blue-gray tones         |
+| Snow          | Snowy   | Light icy blue palette       |
+| Clouds        | Cloudy  | Soft gray gradients          |
+| Thunder/Storm | Stormy  | Dark dramatic atmosphere     |
+| Other         | Default | Neutral gradient             |
+
+---
+
+## OpenWeatherMap API Details
+
+### Endpoint
+
+`https://api.openweathermap.org/data/2.5/weather`
+
+### Parameters
+
+- `q` - city name
+- `appid` - API key
+- `units` - metric (Celsius)
+
+### Response includes
+
+- City name
+- Temperature (current, feels like, min, max)
+- Weather description and icon code
+- Humidity percentage
+- Wind speed
+
+---
+
+## Screenshots
+
+The app includes:
+
+- **Search Bar**: Input field with search button
+- **Weather Card**: Large display with city name, icon, temperature, and description
+- **Weather Details**: Three detail cards showing feels like, humidity, and wind speed
+- **History Grid**: Compact cards showing recent searches with timestamps
+- **Dynamic Background**: Changes color based on weather conditions
+- **Loading State**: Visual feedback during API calls
+
+---
+
+## Future Improvements
+
+- [ ] 5-day weather forecast
+- [ ] Geolocation support (current location)
+- [ ] Temperature unit toggle (Celsius/Fahrenheit)
+- [ ] Multiple city comparison
+- [ ] Weather alerts and notifications
+- [ ] Hourly forecast
+- [ ] UV index and air quality
+- [ ] Favorite cities
+- [ ] Weather map integration
+- [ ] Dark/light mode toggle
+
+---
+
+## Lessons & Takeaways
+
+This project taught me how to:
+
+- Work with external APIs and handle responses
+- Manage environment variables securely
+- Handle asynchronous operations with async/await
+- Implement proper error handling
+- Create dynamic themes based on data
+- Work with timestamps and relative time
+- Optimize API calls and prevent duplicates
+- Structure TypeScript interfaces for API data
+- Handle loading and error states
+- Use localStorage for non-sensitive data persistence
+
+---
+
+## Environment Variables
+
+Create a `.env` file:
+
+```env
+VITE_WEATHER_API_KEY=your_openweathermap_api_key_here
+```
+
+**Important**: Never commit `.env` file to version control. Add it to `.gitignore`.
+
+---
+
+## License
+
+MIT
+
+---
+
+Made with ❤️ using React + TypeScript
