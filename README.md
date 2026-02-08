@@ -60,9 +60,9 @@ Each project focuses on specific skills before moving to more complex applicatio
 
 ### 💰 Expenses Tracker
 
-![Expenses Tracker](./screenshots/expenses-tracker1.png)
-![Expenses Tracker](./screenshots/expenses-tracker2.png)
-![Expenses Tracker](./screenshots/expenses-tracker3.png)
+![Expenses Tracker](./screenshots/expenses-tracker-1.png)
+![Expenses Tracker](./screenshots/expenses-tracker-2.png)
+![Expenses Tracker](./screenshots/expenses-tracker-3.png)
 
 **[View Project →](./expenses-tracker)**
 
@@ -78,8 +78,8 @@ Each project focuses on specific skills before moving to more complex applicatio
 
 ### 🌤️ Weather App
 
-![Weather App](./screenshots/weather-app1.png)
-![Weather App](./screenshots/weather-app2.png)
+![Weather App](./screenshots/weather-app-1.png)
+![Weather App](./screenshots/weather-app-2.png)
 
 **[View Project →](./weather-app)**
 
