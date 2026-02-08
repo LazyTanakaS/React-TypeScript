@@ -1,4 +1,5 @@
 import type { Month } from "../types/types";
+import { FaStar, FaLock, FaPlus, FaTimes } from "react-icons/fa";
 
 interface SideBarProps {
   months: Month[];
@@ -27,7 +28,7 @@ function SideBar({
             className="month-item active"
             onClick={() => onMonthSelect(activeMonth.id)}
           >
-            ⭐ {activeMonth.name}
+            <FaStar /> {activeMonth.name}
           </button>
         )}
       </div>
@@ -40,7 +41,7 @@ function SideBar({
             className="month-item closed"
             onClick={() => onMonthSelect(months.id)}
           >
-            🔒 {months.name}
+            <FaLock /> {months.name}
           </button>
         ))}
       </div>
@@ -49,10 +50,10 @@ function SideBar({
         <h3>Actions</h3>
         <div className="sidebar-actions">
           <button className="btn-add-month" onClick={onAddMonth}>
-            + New Month
+            <FaPlus /> New Month
           </button>
           <button className="btn-close-month" onClick={onClosedMonth}>
-            Close Current
+            <FaTimes /> Close Current
           </button>
         </div>
       </div>

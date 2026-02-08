@@ -1,5 +1,6 @@
 import type { Transaction } from "../types/types";
 import TransactionItem from "./TransactionItem";
+import { FaSync } from "react-icons/fa";
 
 interface SubscriptionsProps {
   transactions: Transaction[];
@@ -24,7 +25,9 @@ function Subscriptions({ transactions, onEdit, onDelete }: SubscriptionsProps) {
   return (
     <div className="subscriptions">
       <div className="subscriptions-header">
-        <h2>📋 Active Subscriptions</h2>
+        <h2>
+          <FaSync /> Active Subscriptions
+        </h2>
         <span className="total-subscriptions">
           {totalSubscriptions.toLocaleString()} Kč/month
         </span>

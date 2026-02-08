@@ -1,5 +1,4 @@
 import "./App.css";
-import "./styles/variables.css";
 import { useState, useEffect } from "react";
 import type { Month, Transaction } from "./types/types";
 import { calculateMonthStats } from "./utils/calculations";

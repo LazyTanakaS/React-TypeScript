@@ -1,6 +1,7 @@
 import { useState } from "react";
 import type { Transaction } from "../types/types";
 import TransactionItem from "./TransactionItem";
+import { FaChartLine } from "react-icons/fa";
 
 interface TransactionListProps {
   transactions: Transaction[];
@@ -29,7 +30,9 @@ function TransactionList({
 
   return (
     <div className="transaction-list">
-      <h2>📊 All Transactions</h2>
+      <h2>
+        <FaChartLine /> All Transactions
+      </h2>
 
       <div className="filters">
         <select

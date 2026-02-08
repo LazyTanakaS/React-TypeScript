@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { FaArrowUp, FaArrowDown } from "react-icons/fa";
 import type {
   Transaction,
   IncomeCategory,
@@ -68,7 +69,9 @@ function TransactionForm({ onAddTransaction }: TransactionFormProps) {
   return (
     <div className="forms-container">
       <form onSubmit={handleIncomeSubmit} className="transaction-form income">
-        <h2>💰 Add Income</h2>
+        <h2>
+          <FaArrowUp /> Add Income
+        </h2>
         <div className="form-group">
           <label htmlFor="income-amount">Amount</label>
           <input
@@ -128,7 +131,9 @@ function TransactionForm({ onAddTransaction }: TransactionFormProps) {
       </form>
 
       <form onSubmit={handleExpenseSubmit} className="transaction-form expense">
-        <h2>💸 Add Expense</h2>
+        <h2>
+          <FaArrowDown /> Add Expense
+        </h2>
         <div className="form-group">
           <label htmlFor="expense-amount">Amount</label>
           <input

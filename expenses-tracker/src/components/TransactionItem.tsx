@@ -1,4 +1,5 @@
 import type { Transaction } from "../types/types";
+import { FaEdit, FaTrash, FaArrowUp, FaArrowDown } from "react-icons/fa";
 
 interface TransactionItemProps {
   transaction: Transaction;
@@ -18,7 +19,7 @@ function TransactionItem({
     return `${day}.${month}`;
   };
 
-  const icon = transaction.type === "income" ? "💰" : "💸";
+  const icon = transaction.type === "income" ? <FaArrowUp /> : <FaArrowDown />;
 
   const amount =
     transaction.type === "income"
@@ -41,8 +42,12 @@ function TransactionItem({
       <span className={`transaction-amount ${amountClass}`}>{amount}</span>
 
       <div className="transaction-actions">
-        <button onClick={() => onEdit(transaction.id)}>✏️ Edit</button>
-        <button onClick={() => onDelete(transaction.id)}>🗑️ Delete</button>
+        <button onClick={() => onEdit(transaction.id)}>
+          <FaEdit /> Edit
+        </button>
+        <button onClick={() => onDelete(transaction.id)}>
+          <FaTrash /> Delete
+        </button>
       </div>
     </div>
   );
