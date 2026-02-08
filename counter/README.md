@@ -1,120 +1,228 @@
-# Counter App
+# Counter App — React + TypeScript# Counter App
 
-A modern counter application with beautiful design, animations, and data persistence.
+![React](https://img.shields.io/badge/React-18-blue?style=flat-square&logo=react)A modern counter application with beautiful design, animations, and data persistence.
 
-![React](https://img.shields.io/badge/React-18-blue?logo=react)
+![TypeScript](https://img.shields.io/badge/TypeScript-5-blue?style=flat-square&logo=typescript)
+
+![Vite](https://img.shields.io/badge/Vite-7-purple?style=flat-square&logo=vite)![React](https://img.shields.io/badge/React-18-blue?logo=react)
+
 ![TypeScript](https://img.shields.io/badge/TypeScript-5-blue?logo=typescript)
-![Vite](https://img.shields.io/badge/Vite-7-purple?logo=vite)
 
-## Features
+## Overview![Vite](https://img.shields.io/badge/Vite-7-purple?logo=vite)
 
-- Increment counter by +1 and +5
+A modern counter application with beautiful design, animations, and data persistence.## Features
+
+**Goal:** Practice React fundamentals, TypeScript typing, and localStorage integration.- Increment counter by +1 and +5
+
 - Decrement counter by -1 and -5
-- Reset counter to zero
+
+---- Reset counter to zero
+
 - **Auto-save to localStorage** (data persists on reload)
-- **Action history** (last 5 operations)
+
+## Features- **Action history** (last 5 operations)
+
 - Value limit from 0 to 100
+
+- Increment/Decrement by +1 and +5- Modern gradient design
+
+- Reset counter to zero- Smooth interaction animations
+
+- Auto-save to localStorage- Responsive interface
+
+- Action history (last 5 operations)
+
+- Value limit from 0 to 100## Technologies
+
 - Modern gradient design
-- Smooth interaction animations
-- Responsive interface
 
-## Technologies
+- Smooth animations- **React 18** - UI library
 
-- **React 18** - UI library
 - **TypeScript 5** - type safety
-- **Vite 7** - fast build tool
+
+---- **Vite 7** - fast build tool
+
 - **CSS3** - gradients and animations
-- **LocalStorage API** - data persistence
 
-## Installation and Running
+## Tech Stack- **LocalStorage API** - data persistence
 
-```bash
-# Install dependencies
-npm install
+- React 18## Installation and Running
 
-# Run development server
+- TypeScript 5
+
+- Vite 7```bash
+
+- CSS3 (gradients, animations)# Install dependencies
+
+- LocalStorage APInpm install
+
+---# Run development server
+
 npm run dev
 
-# Build for production
-npm run build
+## Installation & Running
 
-# Preview production build
+# Build for production
+
+````bashnpm run build
+
+# Install dependencies
+
+npm install# Preview production build
+
 npm run preview
-```
+
+# Run development server```
+
+npm run dev
 
 ## Project Structure
 
-```text
-counter/
+# Build for production
+
+npm run build```text
+
+```counter/
+
 ├── src/
-│   ├── App.tsx          # Main component
+
+---│   ├── App.tsx          # Main component
+
 │   ├── App.css          # Application styles
-│   ├── Button.tsx       # Button component
+
+## Project Structure│   ├── Button.tsx       # Button component
+
 │   ├── main.tsx         # Entry point
-│   └── index.css        # Global styles
-├── public/              # Static files
-├── package.json         # Dependencies
-├── vite.config.ts       # Vite configuration
-└── tsconfig.json        # TypeScript configuration
-```
 
-## What I Learned
+```text│   └── index.css        # Global styles
 
-### TypeScript
+counter/├── public/              # Static files
 
-- Typing `useState<number>()`
-- Interfaces for props: `interface ButtonProps`
+├── src/├── package.json         # Dependencies
+
+│   ├── App.tsx          # Main component├── vite.config.ts       # Vite configuration
+
+│   ├── App.css          # Styles└── tsconfig.json        # TypeScript configuration
+
+│   ├── Button.tsx       # Button component```
+
+│   ├── main.tsx         # Entry point
+
+│   └── index.css        # Global styles## What I Learned
+
+├── public/
+
+├── package.json### TypeScript
+
+├── vite.config.ts
+
+└── tsconfig.json- Typing `useState<number>()`
+
+```- Interfaces for props: `interface ButtonProps`
+
 - Optional parameters: `onClick?: () => void`
-- Function typing: `(amount: number) => void`
+
+---- Function typing: `(amount: number) => void`
+
 - Object typing: `HistoryEntry`
-- localStorage typing
 
-### React Hooks
+## What I Learned- localStorage typing
 
-- `useState` - state management
-- `useEffect` - side effects and synchronization
-- Lazy initialization in useState
+
+
+**TypeScript:**### React Hooks
+
+- Typing useState: `useState<number>()`
+
+- Interface for props: `interface ButtonProps`- `useState` - state management
+
+- Optional parameters: `onClick?: () => void`- `useEffect` - side effects and synchronization
+
+- Function typing: `(amount: number) => void`- Lazy initialization in useState
+
 - Functional state updates: `setCount(prev => prev + 1)`
-- Dependencies array in useEffect
 
-### Data Management
+**React Hooks:**- Dependencies array in useEffect
 
-- **localStorage** - saving and loading data
+- `useState` — state management
+
+- `useEffect` — localStorage sync### Data Management
+
+- Lazy initialization
+
+- Functional state updates- **localStorage** - saving and loading data
+
 - JSON serialization/deserialization
-- Action history management
-- Value range constraints (0-100)
 
-### CSS
+**Data Management:**- Action history management
+
+- localStorage persistence- Value range constraints (0-100)
+
+- JSON serialization
+
+- Action history tracking### CSS
+
+- Value range constraints
 
 - CSS gradients `linear-gradient()`
-- CSS animations `@keyframes`
+
+---- CSS animations `@keyframes`
+
 - Transitions for smoothness
-- Box-shadow for depth
+
+## Key Components- Box-shadow for depth
+
 - Hover effects
-- Custom scrollbar
 
-## Main Components
+### App.tsx- Custom scrollbar
 
-### App.tsx
 
-Main component with logic:
+
+Main component with:## Main Components
 
 - Counter state management
-- localStorage persistence
+
+- localStorage persistence### App.tsx
+
 - Action history
+
+- Event handlingMain component with logic:
+
+
+
+### Button.tsx- Counter state management
+
+- localStorage persistence
+
+Reusable button component:- Action history
+
 - Event handling
 
-### Button.tsx
-
-Reusable button component:
-
 ```typescript
-interface ButtonProps {
+
+interface ButtonProps {### Button.tsx
+
   label: string;
-  onClick?: () => void;
+
+  onClick?: () => void;Reusable button component:
+
   className?: string;
-}
-```
+
+}```typescript
+
+```interface ButtonProps {
+
+  label: string;
+
+---  onClick?: () => void;
+
+  className?: string;
+
+## Author}
+
+````
+
+Made with ❤️ using React + TypeScript
 
 ## Implementation Features
 

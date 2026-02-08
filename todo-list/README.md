@@ -1,148 +1,273 @@
-# 📝 Todo List App# Todo List App# 📝 Todo List App# React + TypeScript + Vite
+# Todo List App — React + TypeScript# 📝 Todo List App# Todo List App# 📝 Todo List App# React + TypeScript + Vite
 
-A beautiful todo list application with vintage design, filters, and data persistence.A beautiful todo list application with vintage design, filters, and data persistence.A beautiful todo list application with vintage design, filters, and data persistence.This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+![React](https://img.shields.io/badge/React-18-blue?style=flat-square&logo=react)A beautiful todo list application with vintage design, filters, and data persistence.A beautiful todo list application with vintage design, filters, and data persistence.A beautiful todo list application with vintage design, filters, and data persistence.This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
-![React](https://img.shields.io/badge/React-18-blue?logo=react)![React](https://img.shields.io/badge/React-18-blue?logo=react)![React](https://img.shields.io/badge/React-18-blue?logo=react)Currently, two official plugins are available:
+![TypeScript](https://img.shields.io/badge/TypeScript-5-blue?style=flat-square&logo=typescript)
 
-![TypeScript](https://img.shields.io/badge/TypeScript-5-blue?logo=typescript)
+![Vite](https://img.shields.io/badge/Vite-7-purple?style=flat-square&logo=vite)![React](https://img.shields.io/badge/React-18-blue?logo=react)![React](https://img.shields.io/badge/React-18-blue?logo=react)![React](https://img.shields.io/badge/React-18-blue?logo=react)Currently, two official plugins are available:
 
-![Vite](https://img.shields.io/badge/Vite-7-purple?logo=vite)![TypeScript](https://img.shields.io/badge/TypeScript-5-blue?logo=typescript)
+## Overview![TypeScript](https://img.shields.io/badge/TypeScript-5-blue?logo=typescript)
 
-## ✨ Features![Vite](https://img.shields.io/badge/Vite-7-purple?logo=vite)![TypeScript](https://img.shields.io/badge/TypeScript-5-blue?logo=typescript)
+A beautiful todo list application with vintage design, filters, and data persistence.![Vite](https://img.shields.io/badge/Vite-7-purple?logo=vite)![TypeScript](https://img.shields.io/badge/TypeScript-5-blue?logo=typescript)
 
-- ➕ Add new tasks## Features![Vite](https://img.shields.io/badge/Vite-7-purple?logo=vite)- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
+**Goal:** Practice CRUD operations, filtering logic, and localStorage integration.## ✨ Features![Vite](https://img.shields.io/badge/Vite-7-purple?logo=vite)![TypeScript](https://img.shields.io/badge/TypeScript-5-blue?logo=typescript)
 
-- ✅ Mark tasks as completed
+---- ➕ Add new tasks## Features![Vite](https://img.shields.io/badge/Vite-7-purple?logo=vite)- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
 
-- ❌ Delete tasks- Add new tasks- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Features- ✅ Mark tasks as completed
 
-- 🔍 Filter tasks (All / Active / Completed)
+- Add, edit, and delete tasks- ❌ Delete tasks- Add new tasks- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
 
-- 💾 **Auto-save to localStorage** (data persists on reload)- Mark tasks as completed
+- Mark tasks as complete
 
-- 🎨 Vintage retro design with handwritten font
+- Filter by status (All/Active/Completed)- 🔍 Filter tasks (All / Active / Completed)
 
-- ✨ Smooth animations and hover effects- Delete tasks## ✨ Features
+- Auto-save to localStorage
 
-- 📱 Responsive interface
+- Vintage retro design- 💾 **Auto-save to localStorage** (data persists on reload)- Mark tasks as completed
 
-- Filter tasks (All / Active / Completed)
+- Smooth animations
 
-## 🚀 Technologies
+- Responsive interface- 🎨 Vintage retro design with handwritten font
 
-- **Auto-save to localStorage** (data persists on reload)## React Compiler
+---- ✨ Smooth animations and hover effects- Delete tasks## ✨ Features
+
+## Tech Stack- 📱 Responsive interface
+
+- React 18- Filter tasks (All / Active / Completed)
+
+- TypeScript 5
+
+- Vite 7## 🚀 Technologies
+
+- CSS3 (gradients, animations)
+
+- LocalStorage API- **Auto-save to localStorage** (data persists on reload)## React Compiler
+
+- Google Fonts (Caveat)
 
 - **React 18** - UI library
 
+---
+
 - **TypeScript 5** - type safety- Vintage retro design with handwritten font
+
+## Installation & Running
 
 - **Vite 7** - fast build tool
 
-- **CSS3** - gradients, shadows, and animations- Smooth animations and hover effects- ➕ Add new tasks
+```````````bash
+
+# Install dependencies- **CSS3** - gradients, shadows, and animations- Smooth animations and hover effects- ➕ Add new tasks
+
+npm install
 
 - **LocalStorage API** - data persistence
 
-- **Google Fonts** - Caveat (handwritten font)- Responsive interface
+# Run development server
 
-## 📦 Installation and Running- ✅ Mark tasks as completedThe React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
-
-```````bash## Technologies
-
-# Install dependencies
-
-npm install- ❌ Delete tasks
+npm run dev- **Google Fonts** - Caveat (handwritten font)- Responsive interface
 
 
 
-# Run development server- **React 18** - UI library
+# Build for production## 📦 Installation and Running- ✅ Mark tasks as completedThe React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
 
-npm run dev
+npm run build
 
-- **TypeScript 5** - type safety- 🔍 Filter tasks (All / Active / Completed)## Expanding the ESLint configuration
-
-# Build for production
-
-npm run build- **Vite 7** - fast build tool
+``````````bash## Technologies
 
 
 
-# Preview production build- **CSS3** - gradients, shadows, and animations- 💾 **Auto-save to localStorage** (data persists on reload)
-
-npm run preview
-
-```- **LocalStorage API** - data persistence
+---# Install dependencies
 
 
 
-## 📂 Project Structure- **Google Fonts** - Caveat (handwritten font)- 🎨 Vintage retro design with handwritten fontIf you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## Project Structurenpm install- ❌ Delete tasks
 
 
 
-```text## Installation and Running- ✨ Smooth animations and hover effects
+```text
 
 todo-list/
 
-├── src/`bash- 📱 Responsive interface`js
+├── src/# Run development server- **React 18** - UI library
 
-│   ├── App.tsx           # Main component with logic
+│   ├── App.tsx           # Main component
 
-│   ├── App.css           # Application styles# Install dependencies
+│   ├── App.css           # Stylesnpm run dev
 
-│   ├── TaskItem.tsx      # Task item component
+│   ├── TaskItem.tsx      # Task component
 
-│   ├── TaskInput.tsx     # Input field componentnpm installexport default defineConfig([
+│   ├── TaskInput.tsx     # Input component- **TypeScript 5** - type safety- 🔍 Filter tasks (All / Active / Completed)## Expanding the ESLint configuration
 
-│   ├── FilterButtons.tsx # Filter buttons component
+│   ├── FilterButtons.tsx # Filter component
 
-│   ├── main.tsx          # Entry point# Run development server## 🚀 Technologies globalIgnores(['dist']),
+│   ├── main.tsx          # Entry point# Build for production
 
 │   └── index.css         # Global styles
 
-├── public/               # Static filesnpm run dev
+├── public/npm run build- **Vite 7** - fast build tool
 
-├── package.json          # Dependencies
+├── package.json
 
-├── vite.config.ts        # Vite configuration{
+├── vite.config.ts
 
-└── tsconfig.json         # TypeScript configuration
+└── tsconfig.json
 
-```# Build for production
-
-
-
-## 📚 What I Learnednpm run build- **React 18** - UI library files: ['**/*.{ts,tsx}'],
+```# Preview production build- **CSS3** - gradients, shadows, and animations- 💾 **Auto-save to localStorage** (data persists on reload)
 
 
 
-### TypeScript# Preview production build- **TypeScript 5** - type safety extends: [
+---npm run preview
 
 
 
-- Type aliases: `type FilterType = "all" | "active" | "completed"`npm run preview
+## What I Learned```- **LocalStorage API** - data persistence
 
-- Interfaces: `interface Task`, `interface TaskItemProps`
 
-- Exporting types: `export type FilterType``````- **Vite 7** - fast build tool // Other configs...
+
+**TypeScript:**
+
+- Type aliases: `type FilterType = "all" | "active" | "completed"`
+
+- Interfaces: `interface Task`, `interface TaskItemProps`## 📂 Project Structure- **Google Fonts** - Caveat (handwritten font)- 🎨 Vintage retro design with handwritten fontIf you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+
+- Exporting types: `export type FilterType`
 
 - Type-only imports: `import type { Task } from "./App"`
 
+- Event typing: `React.ChangeEvent<HTMLInputElement>`
+
+```text## Installation and Running- ✨ Smooth animations and hover effects
+
+**React Hooks:**
+
+- `useState` — state management for tasks, filter, inputtodo-list/
+
+- `useEffect` — syncing with localStorage
+
+- Lazy initialization├── src/`bash- 📱 Responsive interface`js
+
+- Functional state updates with `map()` and `filter()`
+
+│   ├── App.tsx           # Main component with logic
+
+**Data Management:**
+
+- localStorage persistence│   ├── App.css           # Application styles# Install dependencies
+
+- JSON serialization
+
+- Array methods: `map()`, `filter()`, `find()`│   ├── TaskItem.tsx      # Task item component
+
+- Filtering logic for different views
+
+- Generating unique IDs with `Date.now()`│   ├── TaskInput.tsx     # Input field componentnpm installexport default defineConfig([
+
+
+
+---│   ├── FilterButtons.tsx # Filter buttons component
+
+
+
+## Key Components│   ├── main.tsx          # Entry point# Run development server## 🚀 Technologies globalIgnores(['dist']),
+
+
+
+### App.tsx│   └── index.css         # Global styles
+
+
+
+Main component with:├── public/               # Static filesnpm run dev
+
+- Tasks array management
+
+- Current filter state├── package.json          # Dependencies
+
+- CRUD operations
+
+- Filtering logic├── vite.config.ts        # Vite configuration{
+
+- localStorage integration
+
+└── tsconfig.json         # TypeScript configuration
+
+### TaskItem.tsx
+
+```# Build for production
+
+Individual task component:
+
+- Checkbox for completion
+
+- Task text display
+
+- Delete button## 📚 What I Learnednpm run build- **React 18** - UI library files: ['**/*.{ts,tsx}'],
+
+- Visual styling for completed tasks
+
+
+
+### TaskInput.tsx
+
+### TypeScript# Preview production build- **TypeScript 5** - type safety extends: [
+
+Input field component:
+
+- Controlled input
+
+- Enter key support
+
+- Input validation- Type aliases: `type FilterType = "all" | "active" | "completed"`npm run preview
+
+
+
+### FilterButtons.tsx- Interfaces: `interface Task`, `interface TaskItemProps`
+
+
+
+Filter buttons component:- Exporting types: `export type FilterType``````- **Vite 7** - fast build tool // Other configs...
+
+- Three filter options (All/Active/Completed)
+
+- Active button highlighting- Type-only imports: `import type { Task } from "./App"`
+
+- Filter change handler
+
 - Function typing: `(id: number) => void`
+
+---
 
 - Event typing: `React.ChangeEvent<HTMLInputElement>`
 
+## Design Features
+
 ## Project Structure- **CSS3** - gradients, shadows, and animations
 
-### React Hooks
+- Vintage paper texture effect
+
+- Handwritten Caveat font### React Hooks
+
+- Brown/beige retro color palette
+
+- Smooth hover animations
+
+- 3D button effects with gradients
+
+- Typewriter-style interface- `useState` - state management for tasks, filter, input
 
 
 
-- `useState` - state management for tasks, filter, input
+---- `useEffect` - syncing with localStorage```text- **LocalStorage API** - data persistence // Remove tseslint.configs.recommended and replace with this
 
-- `useEffect` - syncing with localStorage```text- **LocalStorage API** - data persistence // Remove tseslint.configs.recommended and replace with this
 
-- Lazy initialization: loading saved tasks on mount
 
-- Functional state updates with `map()` and `filter()`todo-list/
+## Author- Lazy initialization: loading saved tasks on mount
+
+
+
+Made with ❤️ using React + TypeScript- Functional state updates with `map()` and `filter()`todo-list/
+
 
 - Dependencies array in useEffect
 
@@ -360,7 +485,7 @@ const [tasks, setTasks] = useState<Task[]>(() => {
 
 });- CSS gradients `linear-gradient()`
 
-```````
+```````````
 
 - Box-shadow for depth effect│ ├── FilterButtons.tsx # Filter buttons component globalIgnores(['dist']),
 

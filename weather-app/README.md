@@ -1,208 +1,403 @@
-# 🌤️ Weather App# Weather App# React + TypeScript + Vite
+# Weather App — React + TypeScript# 🌤️ Weather App# Weather App# React + TypeScript + Vite
 
-A modern weather application with beautiful glassmorphism design, dynamic themes, and search history.A modern weather application with beautiful glassmorphism design, dynamic themes, and search history.This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+![React](https://img.shields.io/badge/React-18-blue?style=flat-square&logo=react)A modern weather application with beautiful glassmorphism design, dynamic themes, and search history.A modern weather application with beautiful glassmorphism design, dynamic themes, and search history.This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
-![React](https://img.shields.io/badge/React-18-blue?logo=react)![React](https://img.shields.io/badge/React-18-blue?logo=react)Currently, two official plugins are available:
+![TypeScript](https://img.shields.io/badge/TypeScript-5-blue?style=flat-square&logo=typescript)
+
+![Vite](https://img.shields.io/badge/Vite-7-purple?style=flat-square&logo=vite)![React](https://img.shields.io/badge/React-18-blue?logo=react)![React](https://img.shields.io/badge/React-18-blue?logo=react)Currently, two official plugins are available:
+
+![OpenWeather](https://img.shields.io/badge/OpenWeather-API-orange?style=flat-square&logo=weatherapi)
 
 ![TypeScript](https://img.shields.io/badge/TypeScript-5-blue?logo=typescript)
 
+## Overview
+
 ![Vite](https://img.shields.io/badge/Vite-7-purple?logo=vite)![TypeScript](https://img.shields.io/badge/TypeScript-5-blue?logo=typescript)
+
+A modern weather application with beautiful glassmorphism design, dynamic themes, and search history.
 
 ![OpenWeather](https://img.shields.io/badge/OpenWeather-API-orange?logo=weatherapi)
 
+**Goal:** Practice API integration, dynamic theming, and localStorage persistence.
+
 ![Vite](https://img.shields.io/badge/Vite-7-purple?logo=vite)- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
+
+---
 
 ## ✨ Features
 
+## Features
+
 ![OpenWeather](https://img.shields.io/badge/OpenWeather-API-orange?logo=weatherapi)- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
 
-- 🔍 Real-time weather search by city name
+- Real-time weather search by city name
 
-- 🌡️ Current temperature, feels like, humidity, and wind speed## Features## React Compiler
+- Current temperature, feels like, humidity, wind speed- 🔍 Real-time weather search by city name
 
-- 🎨 **Dynamic theme** based on weather conditions
+- Dynamic theme based on weather conditions
 
-- 📜 **Search history** (last 7 searches)- Real-time weather search by city nameThe React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- Search history (last 7 searches)- 🌡️ Current temperature, feels like, humidity, and wind speed## Features## React Compiler
 
-- ⏰ **Timestamp** for each search
+- Timestamp for each search
 
-- 🌤️ Weather icons from OpenWeatherMap- Current temperature, feels like, humidity, and wind speed
+- Weather icons from OpenWeatherMap- 🎨 **Dynamic theme** based on weather conditions
 
-- ✨ Glassmorphism design with blur effects
+- Glassmorphism design with blur effects
 
-- 🎭 Smooth animations and transitions- **Dynamic theme** based on weather conditions## Expanding the ESLint configuration
+- Smooth animations and transitions- 📜 **Search history** (last 7 searches)- Real-time weather search by city nameThe React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
 
-- 💾 Auto-save history to localStorage
+- Auto-save history to localStorage
 
-- 📱 Responsive interface- **Search history** (last 7 searches)
+- Responsive interface- ⏰ **Timestamp** for each search
 
-## 🌈 Weather Themes- **Timestamp** for each searchIf you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+---- 🌤️ Weather icons from OpenWeatherMap- Current temperature, feels like, humidity, and wind speed
+
+## Weather Themes- ✨ Glassmorphism design with blur effects
+
+Background dynamically changes based on weather:- 🎭 Smooth animations and transitions- **Dynamic theme** based on weather conditions## Expanding the ESLint configuration
+
+- ☀️ **Sunny** — Yellow-orange gradient- 💾 Auto-save history to localStorage
+
+- 🌧️ **Rainy** — Blue-grey gradient
+
+- ❄️ **Snowy** — White-blue gradient- 📱 Responsive interface- **Search history** (last 7 searches)
+
+- ☁️ **Cloudy** — Grey gradient
+
+- 🌫️ **Mist** — Light grey gradient## 🌈 Weather Themes- **Timestamp** for each searchIf you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+
+- ⛈️ **Thunderstorm** — Dark purple gradient
 
 The background dynamically changes based on weather:- Weather icons from OpenWeatherMap
 
+---
+
 - ☀️ **Sunny** - Yellow-orange gradient- Glassmorphism design with blur effects```js
+
+## Tech Stack
 
 - 🌧️ **Rainy** - Blue-grey gradient
 
-- ❄️ **Snowy** - White-blue gradient- Smooth animations and transitionsexport default defineConfig([
+- React 18
 
-- ☁️ **Cloudy** - Grey gradient
+- TypeScript 5- ❄️ **Snowy** - White-blue gradient- Smooth animations and transitionsexport default defineConfig([
 
-- 🌫️ **Mist** - Light grey gradient- Auto-save history to localStorage globalIgnores(['dist']),
+- Vite 7
+
+- OpenWeatherMap API- ☁️ **Cloudy** - Grey gradient
+
+- CSS3 (glassmorphism, animations)
+
+- LocalStorage API- 🌫️ **Mist** - Light grey gradient- Auto-save history to localStorage globalIgnores(['dist']),
+
+- Fetch API
 
 - ⛈️ **Thunderstorm** - Dark purple gradient
 
+---
+
 - Responsive interface {
+
+## Setup
 
 ## 🚀 Technologies
 
+### Get API Key
+
 files: ['**/*.{ts,tsx}'],
-
-- **React 18** - UI library
-
-- **TypeScript 5** - type safety## Weather Themes extends: [
-
-- **Vite 7** - fast build tool
-
-- **OpenWeatherMap API** - weather data // Other configs...
-
-- **CSS3** - glassmorphism and animations
-
-- **LocalStorage API** - search history persistenceThe background dynamically changes based on weather:
-
-- **Fetch API** - HTTP requests
-
-      // Remove tseslint.configs.recommended and replace with this
-
-## 🔧 Setup
-
-- ☀️ **Sunny** - Yellow-orange gradient tseslint.configs.recommendedTypeChecked,
-
-### 1. Get API Key
-
-- 🌧️ **Rainy** - Blue-grey gradient // Alternatively, use this for stricter rules
 
 1. Register at [OpenWeatherMap](https://openweathermap.org/api)
 
-2. Get your free API key- ❄️ **Snowy** - White-blue gradient tseslint.configs.strictTypeChecked,
+2. Get your free API key- **React 18** - UI library
 
 3. Create `.env` file in project root:
 
-- ☁️ **Cloudy** - Grey gradient // Optionally, add this for stylistic rules
+- **TypeScript 5** - type safety## Weather Themes extends: [
 
 ```env
 
-VITE_OPENWEATHER_API_KEY=your_api_key_here- ⚡ **Stormy** - Dark grey gradient tseslint.configs.stylisticTypeChecked,
+VITE_OPENWEATHER_API_KEY=your_api_key_here- **Vite 7** - fast build tool
 
 ```
 
-- 💜 **Default** - Purple gradient
+- **OpenWeatherMap API** - weather data // Other configs...
 
-### 2. Installation
+### Installation & Running
 
-      // Other configs...
+- **CSS3** - glassmorphism and animations
 
 ```bash
 
-# Install dependencies## Technologies ]
+# Install dependencies- **LocalStorage API** - search history persistenceThe background dynamically changes based on weather:
 
 npm install
 
-    languageOptions: {
+- **Fetch API** - HTTP requests
 
-# Run development server
+# Create .env file with your API key
 
-npm run dev- **React 18** - UI library parserOptions: {
+echo VITE_OPENWEATHER_API_KEY=your_api_key_here > .env      // Remove tseslint.configs.recommended and replace with this
 
 
 
-# Build for production- **TypeScript 5** - type safety project: ['./tsconfig.node.json', './tsconfig.app.json'],
+# Run development server## 🔧 Setup
 
-npm run build
+npm run dev
 
-- **Vite 7** - fast build tool tsconfigRootDir: import.meta.dirname,
+- ☀️ **Sunny** - Yellow-orange gradient tseslint.configs.recommendedTypeChecked,
 
-# Preview production build
+# Build for production
 
-npm run preview- **OpenWeatherMap API** - weather data },
+npm run build### 1. Get API Key
 
 ```
 
-- **React Icons** - weather icons (wi) // other options...
+- 🌧️ **Rainy** - Blue-grey gradient // Alternatively, use this for stricter rules
 
-## 📂 Project Structure
+---
 
-- **CSS3** - glassmorphism and animations },
+1. Register at [OpenWeatherMap](https://openweathermap.org/api)
 
-`````text
+## Project Structure
 
-weather-app/- **LocalStorage API** - history persistence },
+2. Get your free API key- ❄️ **Snowy** - White-blue gradient tseslint.configs.strictTypeChecked,
+
+````text
+
+weather-app/3. Create `.env` file in project root:
 
 ├── src/
 
-│   ├── App.tsx       # Main component])
+│   ├── App.tsx       # Main component- ☁️ **Cloudy** - Grey gradient // Optionally, add this for stylistic rules
 
 │   ├── App.css       # Styles with glassmorphism
 
-│   ├── main.tsx      # Entry point## Installation and Running```
+│   ├── main.tsx      # Entry point```env
 
 │   └── index.css     # Global styles
 
-├── public/           # Static files````bashYou can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+├── public/VITE_OPENWEATHER_API_KEY=your_api_key_here- ⚡ **Stormy** - Dark grey gradient tseslint.configs.stylisticTypeChecked,
 
 ├── .env              # Environment variables (not in git)
 
-├── package.json      # Dependencies# Install dependencies
+├── package.json```
 
-├── vite.config.ts    # Vite configuration
+├── vite.config.ts
 
-└── tsconfig.json     # TypeScript configurationnpm install```js
+└── tsconfig.json- 💜 **Default** - Purple gradient
 
-`````
+````
 
-// eslint.config.js
+### 2. Installation
 
-## 📚 What I Learned
+---
 
-# Create .env file with your API keyimport reactX from 'eslint-plugin-react-x'
+      // Other configs...
 
-### TypeScript
+## What I Learned
 
-echo VITE_WEATHER_API_KEY=your_api_key_here > .envimport reactDom from 'eslint-plugin-react-dom'
+``````bash
 
-- API response typing with interfaces
+**TypeScript:**
+
+- API response typing with interfaces# Install dependencies## Technologies ]
 
 - Optional properties: `weather?: WeatherData`
 
-- Type guards for null checks
+- Type guards for null checksnpm install
 
-- Async function typing: `Promise<void>`# Run development serverexport default defineConfig([
+- Async function typing: `Promise<void>`
 
-- Union types: `string | null`
+- Union types: `string | null`    languageOptions: {
 
-- Array typing: `string[]`npm run dev globalIgnores(['dist']),
+- Array typing: `string[]`
 
-### React Hooks {
+# Run development server
 
-- `useState` - managing weather, loading, error, history states# Build for production files: ['**/*.{ts,tsx}'],
+**React Hooks:**
 
-- `useEffect` - loading history on mount, saving on change
+- `useState` — managing weather, loading, error, history statesnpm run dev- **React 18** - UI library parserOptions: {
 
-- Async state updatesnpm run build extends: [
+- `useEffect` — loading history on mount, saving on change
+
+- Async state updates
 
 - Error handling in React
 
-- Loading states for better UX // Other configs...
+- Loading states for better UX# Build for production- **TypeScript 5** - type safety project: ['./tsconfig.node.json', './tsconfig.app.json'],
 
-### API Integration# Preview production build // Enable lint rules for React
 
-- **OpenWeatherMap API** - fetching weather datanpm run preview reactX.configs['recommended-typescript'],
 
-- Environment variables with Vite: `import.meta.env.VITE_*`
+**API Integration:**npm run build
 
-- Async/await for API calls``` // Enable lint rules for React DOM
+- OpenWeatherMap API
 
-- Error handling for failed requests
+- Environment variables with Vite: `import.meta.env.VITE_*`- **Vite 7** - fast build tool tsconfigRootDir: import.meta.dirname,
+
+- Async/await for API calls
+
+- Error handling for failed requests# Preview production build
+
+- API response parsing
+
+- Query parameters in URLsnpm run preview- **OpenWeatherMap API** - weather data },
+
+
+
+**Data Management:**```
+
+- localStorage persistence
+
+- JSON serialization- **React Icons** - weather icons (wi) // other options...
+
+- Array methods: `unshift()`, `slice()`, `map()`
+
+- Limiting history to 7 items## 📂 Project Structure
+
+- Timestamps with `Date.toLocaleString()`
+
+- Duplicate prevention in history- **CSS3** - glassmorphism and animations },
+
+
+
+**CSS Advanced:**`````text
+
+- Glassmorphism effect:
+
+  ```cssweather-app/- **LocalStorage API** - history persistence },
+
+  background: rgba(255, 255, 255, 0.2);
+
+  backdrop-filter: blur(10px);├── src/
+
+  border: 1px solid rgba(255, 255, 255, 0.3);
+
+  ```│   ├── App.tsx       # Main component])
+
+- Dynamic backgrounds with gradients
+
+- CSS transitions for smooth theme changes│   ├── App.css       # Styles with glassmorphism
+
+- Flexbox layouts
+
+- Box-shadow for depth│   ├── main.tsx      # Entry point## Installation and Running```
+
+- Hover effects with transforms
+
+│   └── index.css     # Global styles
+
+---
+
+├── public/           # Static files````bashYou can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+
+## Key Components
+
+├── .env              # Environment variables (not in git)
+
+### App.tsx
+
+├── package.json      # Dependencies# Install dependencies
+
+Main component with:
+
+- Weather state management├── vite.config.ts    # Vite configuration
+
+- Search history logic
+
+- API integration└── tsconfig.json     # TypeScript configurationnpm install```js
+
+- Dynamic theming
+
+- localStorage sync`````
+
+
+
+### Dynamic Theme Function// eslint.config.js
+
+
+
+```typescript## 📚 What I Learned
+
+const getWeatherTheme = (description: string) => {
+
+  const themes: Record<string, string> = {# Create .env file with your API keyimport reactX from 'eslint-plugin-react-x'
+
+    Clear: "linear-gradient(135deg, #FDB813, #F37335)",
+
+    Rain: "linear-gradient(135deg, #4A5568, #2D3748)",### TypeScript
+
+    Snow: "linear-gradient(135deg, #E0F2FE, #BFDBFE)",
+
+    Clouds: "linear-gradient(135deg, #9CA3AF, #6B7280)",echo VITE_WEATHER_API_KEY=your_api_key_here > .envimport reactDom from 'eslint-plugin-react-dom'
+
+    Mist: "linear-gradient(135deg, #D1D5DB, #9CA3AF)",
+
+    Thunderstorm: "linear-gradient(135deg, #5E35B1, #311B92)",- API response typing with interfaces
+
+  };
+
+  return themes[description] || "linear-gradient(135deg, #667eea, #764ba2)";- Optional properties: `weather?: WeatherData`
+
+};
+
+```- Type guards for null checks
+
+
+
+---- Async function typing: `Promise<void>`# Run development serverexport default defineConfig([
+
+
+
+## Weather Details- Union types: `string | null`
+
+
+
+The app displays:- Array typing: `string[]`npm run dev globalIgnores(['dist']),
+
+
+
+- 🌡️ **Feels Like** — perceived temperature### React Hooks {
+
+- 💧 **Humidity** — air moisture percentage
+
+- 💨 **Wind Speed** — in meters per second- `useState` - managing weather, loading, error, history states# Build for production files: ['**/*.{ts,tsx}'],
+
+
+
+---- `useEffect` - loading history on mount, saving on change
+
+
+
+## Design Features- Async state updatesnpm run build extends: [
+
+
+
+- Glassmorphism effect with frosted glass look- Error handling in React
+
+- Backdrop blur for modern aesthetics
+
+- Dynamic theme changes based on weather- Loading states for better UX // Other configs...
+
+- Smooth transitions (0.3s ease)
+
+- Weather icons from OpenWeatherMap### API Integration# Preview production build // Enable lint rules for React
+
+- Responsive grid layout
+
+- Hover effects with lift animation- **OpenWeatherMap API** - fetching weather datanpm run preview reactX.configs['recommended-typescript'],
+
+
+
+---- Environment variables with Vite: `import.meta.env.VITE_*`
+
+
+
+## Author- Async/await for API calls``` // Enable lint rules for React DOM
+
+
+
+Made with ❤️ using React + TypeScript + OpenWeatherMap API- Error handling for failed requests
+
 
 - API response parsing reactDom.configs.recommended,
 
@@ -238,7 +433,7 @@ echo VITE_WEATHER_API_KEY=your_api_key_here > .envimport reactDom from 'eslint-p
 
   border: 1px solid rgba(255, 255, 255, 0.3);  },
 
-  ```
+``````
 
 - Dynamic backgrounds with gradients```text])
 
