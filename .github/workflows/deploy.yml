@@ -1,0 +1,84 @@
+name: Deploy to GitHub Pages
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Install and build counter
+        run: |
+          cd counter
+          npm ci
+          npm run build
+
+      - name: Install and build expenses-tracker
+        run: |
+          cd expenses-tracker
+          npm ci
+          npm run build
+
+      - name: Install and build todo-list
+        run: |
+          cd todo-list
+          npm ci
+          npm run build
+
+      - name: Install and build weather-app
+        run: |
+          cd weather-app
+          npm ci
+          npm run build
+
+      - name: Prepare deployment directory
+        run: |
+          mkdir -p deploy
+          cp index.html deploy/
+          mkdir -p deploy/counter
+          mkdir -p deploy/expenses-tracker
+          mkdir -p deploy/todo-list
+          mkdir -p deploy/weather-app
+          cp -r counter/dist/* deploy/counter/
+          cp -r expenses-tracker/dist/* deploy/expenses-tracker/
+          cp -r todo-list/dist/* deploy/todo-list/
+          cp -r weather-app/dist/* deploy/weather-app/
+
+      - name: Setup Pages
+        uses: actions/configure-pages@v4
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: "./deploy"
+
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    needs: build
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
