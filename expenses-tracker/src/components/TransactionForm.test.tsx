@@ -76,4 +76,21 @@ describe("TransactionForm", () => {
 
     expect(onAddTransaction).not.toHaveBeenCalled();
   });
+
+  it("Call onAddTransaction with empty data when send income-form", async () => {
+    const onAddTransaction = vi.fn();
+
+    render(<TransactionForm onAddTransaction={onAddTransaction} />);
+
+    const incomeHeading = screen.getByRole("heading", { name: "Add Income" });
+    const incomeForm = incomeHeading.closest("form")!;
+
+    const user = userEvent.setup();
+
+    const submitButton = within(incomeForm).getByRole("button", {
+      name: "Add Income",
+    });
+    await user.click(submitButton);
+    expect(onAddTransaction).not.toHaveBeenCalled();
+  });
 });
