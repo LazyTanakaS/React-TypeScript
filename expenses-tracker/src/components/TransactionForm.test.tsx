@@ -56,4 +56,24 @@ describe("TransactionForm", () => {
       date: today,
     });
   });
+
+  it("Call onAddTransaction with wrong data when send income-form", async () => {
+    const onAddTransaction = vi.fn();
+
+    render(<TransactionForm onAddTransaction={onAddTransaction} />);
+
+    const incomeHeading = screen.getByRole("heading", { name: "Add Income" });
+    const incomeForm = incomeHeading.closest("form")!;
+    const amountInput = within(incomeForm).getByLabelText("Amount");
+    const user = userEvent.setup();
+
+    await user.type(amountInput, "-50");
+
+    const submitButton = within(incomeForm).getByRole("button", {
+      name: "Add Income",
+    });
+    await user.click(submitButton);
+
+    expect(onAddTransaction).not.toHaveBeenCalled();
+  });
 });
