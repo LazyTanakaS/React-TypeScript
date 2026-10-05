@@ -2,5 +2,7 @@
   "workbench.iconTheme": "material-icon-theme",
   "material-icon-theme.folders.theme": "specific",
   "material-icon-theme.folders.color": "#90a4ae",
-  "material-icon-theme.hidesExplorerArrows": false
+  "material-icon-theme.hidesExplorerArrows": false,
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.formatOnSave": true
 }
