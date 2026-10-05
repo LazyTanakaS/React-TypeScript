@@ -139,17 +139,38 @@ describe("TransactionList", () => {
   it("calls onDelete with the id of the clicked transaction", async () => {
     const user = userEvent.setup();
 
-    render (
+    render(
       <TransactionList
         transactions={transactions}
         onEdit={onEdit}
         onDelete={onDelete}
-      />
+      />,
     );
 
     await user.click(screen.getAllByRole("button", { name: /delete/i })[0]);
 
     expect(onDelete).toHaveBeenCalledWith("1");
     expect(onDelete).toHaveBeenCalledTimes(1);
+  });
+
+  it("applies the type and category filters together", async () => {
+    const user = userEvent.setup();
+
+    render(
+      <TransactionList
+        transactions={transactions}
+        onDelete={onDelete}
+        onEdit={onEdit}
+      />,
+    );
+
+    await user.selectOptions(screen.getByDisplayValue("All Types"), "income");
+    await user.selectOptions(
+      screen.getByDisplayValue("All Categories"),
+      "Food",
+    );
+
+    expect(screen.queryAllByRole("heading", { level: 4 })).toHaveLength(0);
+    expect(screen.getByText(/no transactions match/i)).toBeInTheDocument();
   });
 });
