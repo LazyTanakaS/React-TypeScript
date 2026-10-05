@@ -1,12 +1,37 @@
 import { render, screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
-import TransactionList from "./TransactionList";
-import type { Transaction } from "../types/types.ts";
+import TransactionList from "../TransactionList.tsx";
+import type { Transaction } from "../../types/types.ts";
 
 describe("TransactionList", () => {
+  const onEdit = vi.fn();
+  const onDelete = vi.fn();
+  const transactions: Transaction[] = [
+    {
+      id: "1",
+      type: "income",
+      category: "Salary",
+      amount: 500,
+      description: "",
+      date: "2026-08-24",
+    },
+    {
+      id: "2",
+      type: "expense",
+      category: "Food",
+      amount: 350,
+      description: "",
+      date: "2026-08-29",
+    },
+  ];
+
+  beforeEach(() => {
+    vi.clearAllMocks();
+  });
+
   it("shows empty state with add button when there are no transactions", () => {
     render(
-      <TransactionList transactions={[]} onDelete={vi.fn()} onEdit={vi.fn()} />,
+      <TransactionList transactions={[]} onDelete={onDelete} onEdit={onEdit} />,
     );
 
     expect(screen.getByText("No Transactions Yet")).toBeInTheDocument();
@@ -17,7 +42,7 @@ describe("TransactionList", () => {
 
   it("shows filter message and no add button when filters match nothing", async () => {
     const user = userEvent.setup();
-    const transactions: Transaction[] = [
+    const incomeOnly: Transaction[] = [
       {
         id: "1",
         type: "income",
@@ -30,9 +55,9 @@ describe("TransactionList", () => {
 
     render(
       <TransactionList
-        transactions={transactions}
-        onDelete={vi.fn()}
-        onEdit={vi.fn()}
+        transactions={incomeOnly}
+        onDelete={onDelete}
+        onEdit={onEdit}
       />,
     );
 
@@ -45,33 +70,86 @@ describe("TransactionList", () => {
   });
 
   it("renders every transaction when no filters are applied", () => {
-    const transactions: Transaction[] = [
-      {
-        id: "1",
-        type: "income",
-        category: "Salary",
-        amount: 500,
-        description: "",
-        date: "2026-08-24",
-      },
-      {
-        id: "2",
-        type: "expense",
-        category: "Food",
-        amount: 350,
-        description: "",
-        date: "2026-08-29",
-      },
-    ];
-
     render(
       <TransactionList
         transactions={transactions}
-        onDelete={vi.fn()}
-        onEdit={vi.fn()}
+        onDelete={onDelete}
+        onEdit={onEdit}
       />,
     );
 
     expect(screen.getAllByRole("heading", { level: 4 })).toHaveLength(2);
+  });
+
+  it("shows only expenses when the type filters is 'expense'", async () => {
+    const user = userEvent.setup();
+
+    render(
+      <TransactionList
+        transactions={transactions}
+        onEdit={onEdit}
+        onDelete={onDelete}
+      />,
+    );
+
+    await user.selectOptions(screen.getByDisplayValue("All Types"), "expense");
+    const headings = screen.getAllByRole("heading", { level: 4 });
+    expect(headings).toHaveLength(1);
+    expect(headings[0]).toHaveTextContent("Food");
+  });
+
+  it("shows only the selected category when the category filter is used", async () => {
+    const user = userEvent.setup();
+
+    render(
+      <TransactionList
+        transactions={transactions}
+        onDelete={onDelete}
+        onEdit={onEdit}
+      />,
+    );
+
+    await user.selectOptions(
+      screen.getByDisplayValue("All Categories"),
+      "Salary",
+    );
+
+    const headings = screen.getAllByRole("heading", { level: 4 });
+    expect(headings).toHaveLength(1);
+    expect(headings[0]).toHaveTextContent("Salary");
+  });
+
+  it("calls onEdit with the id of the clicked transaction", async () => {
+    const user = userEvent.setup();
+
+    render(
+      <TransactionList
+        transactions={transactions}
+        onEdit={onEdit}
+        onDelete={onDelete}
+      />,
+    );
+
+    await user.click(screen.getAllByRole("button", { name: /edit/i })[1]);
+
+    expect(onEdit).toHaveBeenCalledWith("2");
+    expect(onEdit).toHaveBeenCalledTimes(1);
+  });
+
+  it("calls onDelete with the id of the clicked transaction", async () => {
+    const user = userEvent.setup();
+
+    render (
+      <TransactionList
+        transactions={transactions}
+        onEdit={onEdit}
+        onDelete={onDelete}
+      />
+    );
+
+    await user.click(screen.getAllByRole("button", { name: /delete/i })[0]);
+
+    expect(onDelete).toHaveBeenCalledWith("1");
+    expect(onDelete).toHaveBeenCalledTimes(1);
   });
 });
