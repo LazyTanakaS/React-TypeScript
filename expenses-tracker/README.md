@@ -59,6 +59,36 @@ npm run preview
 
 ---
 
+## Testing
+
+Unit tests for components, written with **Vitest 4**, **React Testing Library 16**, **user-event 14** and **jest-dom 7** (environment: **jsdom 30**).
+
+```bash
+# run from the expenses-tracker folder
+npx vitest run
+```
+
+### Coverage
+
+| Component       | Tests | What is checked                                                                                |
+| --------------- | ----- | ---------------------------------------------------------------------------------------------- |
+| ConfirmModal    | 3     | Displays confirmation content, handles cancel, and applies the danger style.                   |
+| TransactionForm | 4     | Submits income and expense data; rejects negative and empty income amounts.                    |
+| TransactionItem | 2     | Renders income details with formatted amount/date and calls the edit callback.                 |
+| TransactionList | 8     | Renders empty and populated lists; applies type/category filters; calls edit/delete callbacks. |
+
+17 tests in total.
+
+### How the tests are verified
+
+I manually mutated the combined type/category filter condition in `TransactionList` and the danger-style condition in `ConfirmModal`; the relevant suites caught each mutation (4 of 8 and 1 of 3 tests failed, respectively). After restoring both conditions, all 17 tests passed.
+
+### CI
+
+On pushes to `main` and manual workflow dispatches, GitHub Actions installs dependencies, runs `npx vitest run` and `npm run build` for `expenses-tracker`, and builds the other apps. The deploy job depends on the build job, so a failing test or build prevents deployment to GitHub Pages.
+
+---
+
 ## Project Structure
 
 ```text
