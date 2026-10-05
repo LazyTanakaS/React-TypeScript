@@ -25,7 +25,7 @@ jobs:
       - name: Setup Node
         uses: actions/setup-node@v4
         with:
-          node-version: "20"
+          node-version: "24"
 
       - name: Install and build counter
         run: |
@@ -33,10 +33,11 @@ jobs:
           npm ci
           npm run build
 
-      - name: Install and build expenses-tracker
+      - name: Install, test and build expenses-tracker
         run: |
           cd expenses-tracker
           npm ci
+          npx vitest run
           npm run build
 
       - name: Install and build todo-list
