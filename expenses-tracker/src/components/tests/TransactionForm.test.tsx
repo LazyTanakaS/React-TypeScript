@@ -1,6 +1,6 @@
 import { render, screen, within } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
-import TransactionForm from "./TransactionForm";
+import TransactionForm from "../TransactionForm.tsx";
 
 describe("TransactionForm", () => {
   it("Call onAddTransaction with right data when send income-form", async () => {

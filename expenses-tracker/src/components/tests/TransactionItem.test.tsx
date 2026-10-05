@@ -1,6 +1,6 @@
 import { render, screen } from "@testing-library/react";
-import TransactionItem from "./TransactionItem";
-import type { Transaction } from "../types/types";
+import TransactionItem from "../TransactionItem.tsx";
+import type { Transaction } from "../../types/types.ts";
 import userEvent from "@testing-library/user-event";
 
 describe("TransactionItem", () => {

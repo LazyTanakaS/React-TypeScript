@@ -1,6 +1,6 @@
 import { render, screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
-import ConfirmModal from "./ConfirmModal";
+import ConfirmModal from "../ConfirmModal.tsx";
 
 describe("ConfirmModal", () => {
   it("show title and message, when isOpen=true", () => {
