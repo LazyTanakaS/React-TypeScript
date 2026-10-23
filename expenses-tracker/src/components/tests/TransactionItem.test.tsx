@@ -4,16 +4,25 @@ import type { Transaction } from "../../types/types.ts";
 import userEvent from "@testing-library/user-event";
 
 describe("TransactionItem", () => {
-  it("Show income-transaction with correct formatting", () => {
-    const mockTransaction: Transaction = {
-      id: "1",
-      type: "income",
-      amount: 500,
-      category: "Salary",
-      description: "Monthly salary",
-      date: "2026-08-24",
-    };
+  const mockTransaction: Transaction = {
+    id: "1",
+    type: "income",
+    amount: 500,
+    category: "Salary",
+    description: "Monthly salary",
+    date: "2026-08-24",
+  };
 
+  const mockExpenseTransaction: Transaction = {
+    id: "2",
+    type: "expense",
+    amount: 300,
+    category: "Food",
+    description: "Groceries",
+    date: "2026-08-24",
+  };
+
+  it("Show income-transaction with correct formatting", () => {
     render(
       <TransactionItem
         transaction={mockTransaction}
@@ -30,14 +39,6 @@ describe("TransactionItem", () => {
 
   it("Call onEdit with the right id when clicking on Edit", async () => {
     const onEdit = vi.fn();
-    const mockTransaction: Transaction = {
-      id: "1",
-      type: "income",
-      amount: 500,
-      category: "Salary",
-      description: "Monthly salary",
-      date: "2026-08-24",
-    };
 
     render(
       <TransactionItem
@@ -52,5 +53,22 @@ describe("TransactionItem", () => {
     await user.click(editButton);
 
     expect(onEdit).toHaveBeenCalledWith(mockTransaction.id);
+  });
+
+  it("Show expense-transaction with correct formatting", () => {
+    const onEdit = vi.fn();
+
+    render(
+      <TransactionItem
+        transaction={mockExpenseTransaction}
+        onEdit={onEdit}
+        onDelete={() => {}}
+      />,
+    );
+
+    expect(screen.getByText("Food")).toBeInTheDocument();
+    expect(screen.getByText("Groceries")).toBeInTheDocument();
+    expect(screen.getByText("-300 Kč")).toBeInTheDocument();
+    expect(screen.getByText("24.08")).toBeInTheDocument();
   });
 });
