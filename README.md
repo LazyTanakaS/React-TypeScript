@@ -15,7 +15,9 @@
 ## Repository & Live Demos
 
 **Repository:** [LazyTanakaS/React-TypeScript](https://github.com/LazyTanakaS/React-TypeScript)  
-**Live Demos:** _(Deploy to GitHub Pages or Vercel)_
+**Live Demos:** [Expenses Tracker](https://lazytanakas.github.io/React-TypeScript/expenses-tracker/) | [Todo List](https://lazytanakas.github.io/React-TypeScript/todo-list/) | [Weather App](https://lazytanakas.github.io/React-TypeScript/weather-app/) | [Counter](https://lazytanakas.github.io/React-TypeScript/counter/)  
+**Testing:** [Testing instructions](#testing)  
+**CI:** [GitHub Actions workflow](https://github.com/LazyTanakaS/React-TypeScript/actions/workflows/deploy.yml)
 
 ---
 
@@ -30,7 +32,6 @@ Each project focuses on specific skills before moving to more complex applicatio
 
 **Current:**
 
-- React 18+
 - TypeScript
 - Vite
 - CSS3 (Flexbox, Grid, Responsive Design)
@@ -41,7 +42,6 @@ Each project focuses on specific skills before moving to more complex applicatio
 - Next.js (SSR, routing)
 - State management (Zustand/Redux)
 - API integration (REST, GraphQL)
-- Testing (Vitest, React Testing Library)
 
 ---
 
@@ -49,16 +49,16 @@ Each project focuses on specific skills before moving to more complex applicatio
 
 | Project                 | Description                    | Technologies                    |
 | ----------------------- | ------------------------------ | ------------------------------- |
-| **💰 Expenses Tracker** | Full-featured expense tracking | React, TypeScript, LocalStorage |
-| **✅ Todo List**        | Clean task management          | React, TypeScript, Filters      |
-| **🌤️ Weather App**      | Real-time weather information  | React, TypeScript, API          |
-| **🔢 Counter**          | Simple counter app             | React, TypeScript, Hooks        |
+| **Expenses Tracker** | Full-featured expense tracking | React, TypeScript, LocalStorage |
+| **Todo List**        | Clean task management          | React, TypeScript, Filters      |
+| **Weather App**      | Real-time weather information  | React, TypeScript, API          |
+| **Counter**          | Simple counter app             | React, TypeScript, Hooks        |
 
 ---
 
 ## Screenshots
 
-### 💰 Expenses Tracker
+### Expenses Tracker
 
 ![Expenses Tracker](./screenshots/expenses-tracker-1.png)
 ![Expenses Tracker](./screenshots/expenses-tracker-2.png)
@@ -68,7 +68,7 @@ Each project focuses on specific skills before moving to more complex applicatio
 
 ---
 
-### ✅ Todo List
+### Todo List
 
 ![Todo List](./screenshots/todo-list.png)
 
@@ -76,7 +76,7 @@ Each project focuses on specific skills before moving to more complex applicatio
 
 ---
 
-### 🌤️ Weather App
+### Weather App
 
 ![Weather App](./screenshots/weather-app-1.png)
 ![Weather App](./screenshots/weather-app-2.png)
@@ -85,7 +85,7 @@ Each project focuses on specific skills before moving to more complex applicatio
 
 ---
 
-### 🔢 Counter App
+### Counter App
 
 ![Counter](./screenshots/counter.png)
 
@@ -134,11 +134,21 @@ npm run build
 
 ---
 
+## Testing
+
+The Expenses Tracker tests use Vitest and React Testing Library. From the `expenses-tracker` directory, run:
+
+```bash
+npm test -- --run
+```
+
+---
+
 ## Author
 
 **Petr (Tanaka)**  
 Aspiring Front-End Developer — learning by building real applications.  
 Focused on React, TypeScript, and modern web development.
 
-**Location:** Prague, Czech Republic 🇨🇿  
+**Location:** Prague, Czech Republic  
 **Status:** Open to Junior Frontend positions
