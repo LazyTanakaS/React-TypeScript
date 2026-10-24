@@ -146,7 +146,7 @@ npm test -- --run
 
 ## Author
 
-**Petr (Tanaka)**  
+**Petr Komar**  
 Aspiring Front-End Developer — learning by building real applications.  
 Focused on React, TypeScript, and modern web development.
 
