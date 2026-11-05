@@ -1,6 +1,6 @@
 import "./App.css";
 import { useState, useEffect } from "react";
-import type { Month, Transaction } from "./types/types";
+import type { Month, Transaction, TransactionState } from "./types/types";
 import { calculateMonthStats } from "./utils/calculations";
 import {
   loadMonths,
@@ -19,6 +19,7 @@ import EditTransactionModal from "./components/EditTransactionModal";
 import ConfirmModal from "./components/ConfirmModal";
 import Subscriptions from "./components/Subscriptions";
 import InitialSetupModal from "./components/InitialSetupModal";
+import { fetchTransactions, toTransaction } from "./api/transactions";
 
 function App() {
   const [months, setMonths] = useState<Month[]>(() => {
@@ -28,6 +29,26 @@ function App() {
     }
     return [createInitialMonth()];
   });
+
+  const [transactionState, setTransactionState] = useState<TransactionState>({
+    status: "loading",
+  });
+
+  useEffect(() => {
+    fetchTransactions()
+      .then((rows) =>
+        setTransactionState({
+          status: "success",
+          data: rows.map(toTransaction),
+        }),
+      )
+      .catch(() =>
+        setTransactionState({
+          status: "error",
+          message: "Failed to load transactions",
+        }),
+      );
+  }, []);
 
   const [activeMonthId, setActiveMonthId] = useState<string>(() => {
     const saved = loadActiveMonthId();
@@ -185,6 +206,10 @@ function App() {
   const handleMonthSelect = (monthId: string) => {
     setActiveMonthId(monthId);
   };
+
+  if (transactionState.status === "loading") return <p>Loading...</p>;
+  if (transactionState.status === "error")
+    return <p>{transactionState.message}</p>;
 
   return (
     <div className="app">
