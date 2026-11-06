@@ -20,6 +20,7 @@ export type Transaction = {
 
 export type Month = {
   id: string;
+  key: string;
   name: string;
   startBalance: number;
   transactions: Transaction[];
