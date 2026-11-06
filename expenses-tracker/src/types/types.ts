@@ -20,9 +20,15 @@ export type Transaction = {
 
 export type Month = {
   id: string;
+  key: string;
   name: string;
   startBalance: number;
   transactions: Transaction[];
   isClosed: boolean;
   closedAt?: string;
 };
+
+export type TransactionState =
+  | { status: "loading" }
+  | { status: "success"; data: Transaction[] }
+  | { status: "error"; message: string };
