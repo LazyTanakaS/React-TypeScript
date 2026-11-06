@@ -47,6 +47,8 @@ jobs:
           npm run build
 
       - name: Install and build weather-app
+        env:
+          VITE_WEATHER_API_KEY: ${{ secrets.VITE_WEATHER_API_KEY}}
         run: |
           cd weather-app
           npm ci

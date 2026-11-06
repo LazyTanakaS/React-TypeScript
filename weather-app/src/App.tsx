@@ -185,7 +185,7 @@ function App() {
           <div className="weather-card">
             <h2>{weather.city}</h2>
             <img
-              src={`http://openweathermap.org/img/wn/${weather.icon}@2x.png`}
+              src={`https://openweathermap.org/img/wn/${weather.icon}@2x.png`}
               alt={weather.description}
             />
             <p className="temperature">{Math.round(weather.temperature)}°C</p>
@@ -228,7 +228,7 @@ function App() {
                   onClick={() => handleHistoryClick(item.city)}
                 >
                   <img
-                    src={`http://openweathermap.org/img/wn/${item.icon}.png`}
+                    src={`https://openweathermap.org/img/wn/${item.icon}.png`}
                     alt={weather?.description}
                   />
                   <p className="history-city">{item.city}</p>
